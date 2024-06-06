@@ -1,3 +1,7 @@
+.body-grid{
+    
+}
+
 .titulo{
     display: flex;
     justify-content: space-between;
@@ -23,6 +27,7 @@
 .grid{
     display:grid;
     width:100vw
+    
 }
 
 .flex{
@@ -34,13 +39,77 @@
     margin-inline: 0.4em;
 }
 
-.skills{
-    display: flex;
+.skills, .experiencias{
+    /*display: flex;
     justify-content: space-between;
     flex-direction: row;
+    max-width: 100vw;*/
+
     max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 10px;
+    align-items: center;
 }
 
 fa-icon{
     color:#FEAE6F
 }
+
+
+/* Skill card header */
+.skill-card__header {
+    position: relative;
+    background-color: #f17b4c; /* Lightened version of #E95A28 */
+    height: 170px;
+    margin: -20px -20px 20px -20px;
+    transition: height 0.5s;
+    overflow: hidden;
+  }
+  
+  /* Skill card icon */
+  .skill-card__header .skill-card__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 128px;
+    height: 128px;
+    transition: transform 0.5s;
+  }
+  
+  /* Skill card body */
+  .skill-card__body {
+    height: 40px;
+    transition: height 0.5s;
+    overflow: hidden;
+  }
+  
+  /* Skill card title */
+  .skill-card__body .skill-card__title {
+    font-size: 1.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* Skill card duration */
+  .skill-card__body .skill-card__duration {
+    color: #9E9E9E;
+    font-style: italic;
+  }
+  
+  /* Skill card knowledge list */
+  .skill-card__body .skill-card__knowledge {
+    margin-top: 10px;
+    color: #424242;
+  }
+  
+  /* Skill card knowledge list items */
+  .skill-card__body .skill-card__knowledge li {
+    margin-top: 5px;
+    transition-duration: 0;
+    transition-delay: 0.5s;
+    transform: translateX(0); /* Removed transition-related properties */
+  }
+  

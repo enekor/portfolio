@@ -23,7 +23,20 @@
         <fa-icon size="2x" [icon]="faWork"></fa-icon>
         <h2>Experiencia</h2>
     </div>
-    <p>lasndasnhdajoldaklajfklafnklanflfnjlafnjlafnafj</p>
+    <div class="experiencias">
+        <div *ngFor="let exp of experiencias" class="skill-card">
+            <header class="skill-card__header">
+              <img src={{exp.Foto}} alt={{exp.Nombre}} class="skill-card__icon">
+            </header>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title">{{exp.Nombre}}</h2>
+              <span class="skill-card__duration">{{exp.ExtraInfo}}</span>
+              <ul class="skill-card__knowledge">
+                <li *ngFor="let skill of exp.Skills">{{skill}}</li>
+              </ul>
+            </section>
+          </div>
+    </div>
 </div>
 
 <div class="skills">
@@ -42,4 +55,3 @@
         <p>dadlfhaf</p>
     </div>
 </div>
-
