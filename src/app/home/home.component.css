@@ -52,64 +52,68 @@
     align-items: center;
 }
 
+.experiencias{
+  align-items: center;
+  display: flex;
+}
+
 fa-icon{
     color:#FEAE6F
 }
 
+.experiencias .card {
+  position: relative;
+  max-width : 150px;
+  height : 100px;  
+  background-color : #fff;
+  padding : 20px 15px;
+  
+  display : flex;
+  align-items: center;
+  flex-direction : row;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+  margin-right: 30px;
+}
+.experiencias .card:hover {
+  max-width : 300px; 
+  width:300px;
+  max-height: 150px;
+  height: 150px;
+}
 
-/* Skill card header */
-.skill-card__header {
-    position: relative;
-    background-color: #f17b4c; /* Lightened version of #E95A28 */
-    height: 170px;
-    margin: -20px -20px 20px -20px;
-    transition: height 0.5s;
-    overflow: hidden;
-  }
+
+.experiencias .card .image {
+  width : 100px;
+  height : 100px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+}
+
+.experiencias .card .image img {
+  max-width : 100px;
+  max-height: 100px;
+  border-radius : 15px;
+}
+
+.experiencias .card .content {
+  top : -140px;
+  padding : 10px 15px;
+  color : #111;
   
-  /* Skill card icon */
-  .skill-card__header .skill-card__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 128px;
-    height: 128px;
-    transition: transform 0.5s;
-  }
+  display : none;
+  visibility: none;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+    
+}
+
+.experiencias .card:hover .content {
+   display : block;
+   visibility: visible;
+   opacity : 1;
+   transition-delay: 0.2s;
+   transition : 0.3s ease-in-out;
   
-  /* Skill card body */
-  .skill-card__body {
-    height: 40px;
-    transition: height 0.5s;
-    overflow: hidden;
-  }
-  
-  /* Skill card title */
-  .skill-card__body .skill-card__title {
-    font-size: 1.4em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  /* Skill card duration */
-  .skill-card__body .skill-card__duration {
-    color: #9E9E9E;
-    font-style: italic;
-  }
-  
-  /* Skill card knowledge list */
-  .skill-card__body .skill-card__knowledge {
-    margin-top: 10px;
-    color: #424242;
-  }
-  
-  /* Skill card knowledge list items */
-  .skill-card__body .skill-card__knowledge li {
-    margin-top: 5px;
-    transition-duration: 0;
-    transition-delay: 0.5s;
-    transform: translateX(0); /* Removed transition-related properties */
-  }
-  
+}

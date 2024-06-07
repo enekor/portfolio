@@ -19,7 +19,7 @@ export class HomeComponent {
   faTitulitis = faPen
 
   experiencias = [
-    new Experience("Originpath","2022",[".NET","Python","Angular","Java","SpringBoot"],"https://media.licdn.com/dms/image/C4D0BAQFSjv71UB9YDA/company-logo_200_200/0/1630493257646/originpath_logo?e=2147483647&v=beta&t=GSYMxaDibGbpgqB25AcDOrLuwDxVyLo1eMQm0O9Tct4"),
+    new Experience("Originpath","2022",[".NET","Python","Angular","Java","SpringBoot"],"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_OMiz8nP0c14NvTZ-rPSYfgIDtOVW6sNQ&s"),
     new Experience("Inypsa Airtificial","2022-Actualidad",[".NET","Python","Angular","Blazor"],"https://pcbolsa.com/Logos/M_ES0152768612.jpg")
   ]
 }

@@ -24,18 +24,17 @@
         <h2>Experiencia</h2>
     </div>
     <div class="experiencias">
-        <div *ngFor="let exp of experiencias" class="skill-card">
-            <header class="skill-card__header">
-              <img src={{exp.Foto}} alt={{exp.Nombre}} class="skill-card__icon">
-            </header>
-            <section class="skill-card__body">
-              <h2 class="skill-card__title">{{exp.Nombre}}</h2>
-              <span class="skill-card__duration">{{exp.ExtraInfo}}</span>
-              <ul class="skill-card__knowledge">
-                <li *ngFor="let skill of exp.Skills">{{skill}}</li>
+        <div *ngFor="let item of experiencias" class="card">
+            <div class = image>
+              <img href = "#" src ={{item.Foto}} alt={{item.Nombre}}>
+            </div>
+            <div class = content>
+              <h3>{{item.Nombre}}</h3>
+              <ul>
+                <li *ngFor="let exp of item.Skills">{{exp}}</li>
               </ul>
-            </section>
-          </div>
+            </div>
+          </div>    
     </div>
 </div>
 
