@@ -50,11 +50,16 @@
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     grid-gap: 10px;
     align-items: center;
+    }
+    
+.experiencias{
+      align-items: center;
+      display: flex;
+      overflow-y: scroll;
 }
 
-.experiencias{
-  align-items: center;
-  display: flex;
+.experiencias::-webkit-scrollbar {
+  display: none;
 }
 
 fa-icon{

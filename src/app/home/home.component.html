@@ -49,8 +49,8 @@
     <div class="grid">
         <div class="flex">
             <fa-icon size="2x" [icon]="faBrain"></fa-icon>
-            <h2>Lenguajes</h2>
+            <h2>Tecnologias</h2>
         </div>
-        <p>dadlfhaf</p>
+        <img *ngFor="let tech of lenguajes" src="https://img.shields.io/badge/{{tech}}.svg?style=plastic&logo={{tech}}&logoColor=white" alt={{tech}}/>
     </div>
 </div>
