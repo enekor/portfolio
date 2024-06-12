@@ -1,7 +1,13 @@
 <div class="titulo">
-    <h2 class="lato-regular-bold">Eneko Rebollo Hernández</h2>
-    <p class="descargar lato-italic">Descarga mi CV</p>
+    <div class="info">
+        <h2 class="lato-regular-bold">Eneko Rebollo Hernández</h2>
+        <p>informacion sobre mi</p>
+    </div>
+    <div class="cv">
+        <p class="descargar lato-italic">Descarga mi CV</p>
+    </div>
 </div>
+
 <div class="grid">
     <div class="flex">
         <fa-icon [icon]="faEmail"></fa-icon>
@@ -14,9 +20,6 @@
     </div>
 </div>
 
-<div class="summary">
-    <h3 class="lato-bold">Desarrollador Back-end actualmente aprendiendo para ser Full-Stack.</h3>
-</div>
 
 <div class="grid experiencia">
     <div class="flex">
@@ -38,19 +41,27 @@
     </div>
 </div>
 
-<div class="skills">
-    <div class="grid">
+<div class="bottom">
+    <div class="card bottom-card titulacion">
         <div class="flex">
             <fa-icon size="2x" [icon]="faTitulitis"></fa-icon>
             <h2>Titulaciones</h2>
         </div>
-        <p>doufhsdofh</p>
+        <div class="titulaciones">
+            <ul>
+                <li *ngFor="let titulo of titulos" class="titulacion-texto">
+                    <p><fa-icon [icon]=faLink></fa-icon> {{titulo.Nombre}}</p>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="grid">
+    <div class="card bottom-card tecnologias">
         <div class="flex">
             <fa-icon size="2x" [icon]="faBrain"></fa-icon>
             <h2>Tecnologias</h2>
         </div>
-        <img *ngFor="let tech of lenguajes" src="https://img.shields.io/badge/{{tech}}.svg?style=plastic&logo={{tech}}&logoColor=white" alt={{tech}}/>
+        <div class="banners">
+            <img loading="lazy" *ngFor="let tech of lenguajes" src="https://img.shields.io/badge/{{tech}}.svg?style=plastic&logo={{tech}}&logoColor=white" alt={{tech}}/>
+        </div>
     </div>
 </div>

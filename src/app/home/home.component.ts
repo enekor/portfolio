@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBriefcase, faEnvelope, faGear, faPen, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faBriefcase, faEnvelope, faGear, faPen, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Experience } from '../../models/experience';
 import { CommonModule } from '@angular/common';
 import { Titles } from '../../models/Titles';
@@ -18,6 +18,7 @@ export class HomeComponent {
   faWork = faBriefcase
   faBrain = faGear
   faTitulitis = faPen
+  faLink = faArrowUpRightFromSquare
 
   experiencias = [
     new Experience("Originpath","2022",[".NET","Python","Angular","Java","SpringBoot"],"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_OMiz8nP0c14NvTZ-rPSYfgIDtOVW6sNQ&s"),

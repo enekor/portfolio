@@ -60,7 +60,7 @@
 }
 
 body{
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(254,174,111,1) 100%);
+    background: rgba(9,9,121,1);
     object-fit: cover;
     color: white;
     height: 100vh;
