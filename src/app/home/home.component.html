@@ -7,7 +7,6 @@
         <p class="descargar lato-italic">Descarga mi CV</p>
     </div>
 </div>
-
 <div class="grid">
     <div class="flex">
         <fa-icon [icon]="faEmail"></fa-icon>
@@ -20,24 +19,38 @@
     </div>
 </div>
 
-
-<div class="grid experiencia">
-    <div class="flex">
-        <fa-icon size="2x" [icon]="faWork"></fa-icon>
-        <h2>Experiencia</h2>
+<div class="top">
+    <div class="top-info">
+        <div class="grid experiencia">
+            <div class="flex">
+                <fa-icon size="2x" [icon]="faWork"></fa-icon>
+                <h2>Experiencia</h2>
+            </div>
+            <div class="experiencias">
+                <div *ngFor="let item of experiencias" class="card">
+                    <div class = image>
+                      <img href = "#" src ={{item.Foto}} alt={{item.Nombre}}>
+                    </div>
+                    <div class = content>
+                      <h3>{{item.Nombre}}</h3>
+                      <ul>
+                        <li *ngFor="let exp of item.Skills">{{exp}}</li>
+                      </ul>
+                    </div>
+                  </div>    
+            </div>
+        </div>
     </div>
-    <div class="experiencias">
-        <div *ngFor="let item of experiencias" class="card">
-            <div class = image>
-              <img href = "#" src ={{item.Foto}} alt={{item.Nombre}}>
-            </div>
-            <div class = content>
-              <h3>{{item.Nombre}}</h3>
-              <ul>
-                <li *ngFor="let exp of item.Skills">{{exp}}</li>
-              </ul>
-            </div>
-          </div>    
+    <div class="my-projects">
+        <div *ngFor="let project of projects" class="project-card">
+            <img load="lazy"   src="{{project.Imagen}}" alt="{{project.Nombre}}">
+            <h3>{{project.Nombre}}</h3>
+            <p>{{project.Info}}</p>
+            <p>Tecnologias usadas: </p>
+            <ul>
+                <li *ngfor="let tech of project.Tecnologias">{{tech}}></li>
+            </ul>
+        </div>
     </div>
 </div>
 

@@ -14,6 +14,30 @@
 
   }
 
+  .top{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 10px;
+    align-items: center;
+    margin-block: 60px;
+  }
+
+.my-projects{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    max-width: 50%;                /* Limits the container to 50% of its parent's width */
+    gap: 10px;     
+    
+  }
+  .my-projects .project-card{
+    margin-inline: 5px;
+    border:solid 1px white;
+    background-color: #ffe2cda9;
+    border-radius: 15px;
+    padding: 15px;
+  }
+
+
 .grid{
     display:grid;
     width:100vw
