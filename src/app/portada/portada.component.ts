@@ -10,5 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './portada.component.css'
 })
 export class PortadaComponent {
-
+  goToAboutMe() {
+    window.location.href = '/about-me';
+  }
 }
