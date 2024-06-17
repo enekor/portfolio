@@ -27,13 +27,13 @@ export class HomeComponent {
   ]
 
   titulos = [
-    new Titles("Desarrollo de aplicaciones multiplataforma",""),
-    new Titles("EFSET C2","https://github.com/enekor/MisCertificados/blob/almacenamiento/certificados/EF%20SET%20Certificate.pdf"),
-    new Titles("Certificados android","https://github.com/enekor/MisCertificados/almacenamiento/certificados/Android"),
-    new Titles("Certificados API","https://github.com/enekor/MisCertificados/almacenamiento/certificados/Api"),
-    new Titles("Certificados Java/Kotlin","https://github.com/enekor/MisCertificados/almacenamiento/certificados/JavaKotlin"),
-    new Titles("Certificados Git","https://github.com/enekor/MisCertificados/almacenamiento/certificados/Git"),
-    new Titles("Certificados Javascript","https://github.com/enekor/MisCertificados/almacenamiento/certificados/JS"),
+    new Titles("Desarrollo de aplicaciones multiplataforma","","/certificados/dam.png"),
+    new Titles("EFSET C2","https://github.com/enekor/MisCertificados/blob/almacenamiento/certificados/EF%20SET%20Certificate.pdf","/certificados/efset.png"),
+    new Titles("Certificados android","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Android","/certificados/android.png"),
+    new Titles("Certificados API","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Api","/certificados/api.png"),
+    new Titles("Certificados Java/Kotlin","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JavaKotlin","/certificados/jdk.png"),
+    new Titles("Certificados Git","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Git","/certificados/git.png"),
+    new Titles("Certificados Javascript","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JS","/certificados/js.png"),
   ]
 
   lenguajes = [
