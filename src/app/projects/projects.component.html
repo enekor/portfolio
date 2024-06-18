@@ -6,13 +6,14 @@
         [onMouseLeave]="onMouseLeave"
         [project]="p"
         [id]="i">
-    </app-project>
+        </app-project>
     </div>
-    <p>{{this.selectedProject.Nombre}}</p>
-    <div class="tecnologias">
-        <h3 *ngIf="selectedProject.Tecnologias.length > 0">Tecnologias usadas en la aplicacion</h3>
-        <ul>
-            <li *ngFor="let t of selectedProject.Tecnologias">{{t}}</li>
+    <div class="info-project">
+        <h2 id="sel-proj-name"></h2>
+        <h3 *ngIf="tecnologiasSeleccionadas.length > 0">Tecnologias usadas</h3>
+        <ul id="sel-tecnologias">
+            <li *ngFor="let t of tecnologiasSeleccionadas">{{t}}</li>
         </ul>
     </div>
+    
 </div>

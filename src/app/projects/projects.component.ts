@@ -3,7 +3,6 @@ import { Project } from '../../models/Project';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { ProjectComponent } from "./project/project.component";
-import { Console, log } from 'console';
 
 @Component({
     selector: 'app-projects',
@@ -13,7 +12,7 @@ import { Console, log } from 'console';
     imports: [FontAwesomeModule, CommonModule, ProjectComponent]
 })
 export class ProjectsComponent {
-  selectedProject:Project = new Project("Seleccione un proyecto para ver mas información","", "",[],"")
+  tecnologiasSeleccionadas:string[] = []
   projects = [
     new Project("Gastoscopio","/projects/gastoscopio.jpg","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
     new Project("BTools","/projects/btools.jpg","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
@@ -22,13 +21,15 @@ export class ProjectsComponent {
 
   onMouseEnter(p:Project){
     console.log('Pito gigante')
+    document.getElementById('sel-proj-name')!.innerText = p.Nombre
 
-    this.selectedProject = p
-    console.log(this.selectedProject)
-    
+    let lis:string[] = []
+    for(let t of p.Tecnologias){
+      lis.push("<li>"+t+"</li>")
+    }
+    document.getElementById('sel-tecnologias')!.innerHTML = lis.join('')
   }
 
   onMouseLeave(p:Project){
-    this.selectedProject = new Project("Seleccione un proyecto para ver mas información","", "",[],"")
   }
 }
