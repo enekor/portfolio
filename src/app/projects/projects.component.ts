@@ -12,6 +12,7 @@ import { ProjectComponent } from "./project/project.component";
     imports: [FontAwesomeModule, CommonModule, ProjectComponent]
 })
 export class ProjectsComponent {
+  selectedProject?:Project = undefined
   projects = [
     new Project("Gastoscopio","/projects/gastoscopio.jpg","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
     new Project("BTools","/projects/btools.jpg","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),

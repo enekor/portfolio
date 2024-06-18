@@ -1,3 +1,13 @@
-<div class="container">
-    <app-project *ngFor="let p of projects; let i=index"[titulo]="p.Nombre" [descripcion]="p.Info" [imagen]="p.Imagen" [tecnologias]="p.Tecnologias" [id]="i"></app-project>
+<div class="projects">
+    <div class="container">
+        <app-project *ngFor="let p of projects; let i=index"[titulo]="p.Nombre" [descripcion]="p.Info" [imagen]="p.Imagen" [tecnologias]="p.Tecnologias" [id]="i"></app-project>
+    </div>
+    <div class="project-info" *ngIf="selectedProject != undefined && selectedProject != null">
+        <div class="tecnologias">
+            <ul>
+                <li *ngFor="let tec of selectedProject!.Tecnologias">{{tec}}</li>
+            </ul>
+        </div>
+        
+    </div>
 </div>
