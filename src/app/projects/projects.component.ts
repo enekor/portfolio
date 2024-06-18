@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { Project } from '../../models/Project';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { ProjectComponent } from "./project/project.component";
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+    selector: 'app-projects',
+    standalone: true,
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.css',
+    imports: [FontAwesomeModule, CommonModule, ProjectComponent]
 })
 export class ProjectsComponent {
   projects = [

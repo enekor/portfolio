@@ -1,0 +1,24 @@
+.card {
+    min-width: 70px;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    position: relative;
+    transition: flex-grow 0.5s ease;
+  }
+    .card:hover{
+      flex-grow: 7;
+    }
+  
+.card-content > .title{
+  margin-left: 10px;
+  translate: 0 100%;
+  opacity: 0;
+}
+
+.card:hover .title{
+  opacity: 1;
+  translate: 0 0;
+}
