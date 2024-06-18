@@ -1,7 +1,7 @@
-<div class="card">
-  <img class="background" src="image.jpg" alt="Image" style="max-width: 50%;">
-  <div class="crad-content">
-    <h3 class="title">{{titulo}}</h3>
+<div class="card hidden" id="{{id}}" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+  <img class="background" src="/assets{{imagen}}" alt="Image">
+  <div class="card-content hidden" id="c{{id}}">
+    <h3>{{titulo}}</h3>
     <p class="description">{{descripcion}}</p>
     <ul>
       <li *ngFor="let tec of tecnologias">{{tec}}</li>

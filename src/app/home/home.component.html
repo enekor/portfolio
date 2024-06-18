@@ -41,17 +41,6 @@
             </div>
         </div>
     </div>
-    <div class="my-projects">
-        <div *ngFor="let project of projects" class="project-card">
-            <img load="lazy"   src="{{project.Imagen}}" alt="{{project.Nombre}}">
-            <h3>{{project.Nombre}}</h3>
-            <p>{{project.Info}}</p>
-            <p>Tecnologias usadas: </p>
-            <ul>
-                <li *ngfor="let tech of project.Tecnologias">{{tech}}></li>
-            </ul>
-        </div>
-    </div>
 </div>
 
 <div class="bottom">
