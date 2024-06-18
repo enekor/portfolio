@@ -1,13 +1,18 @@
 <div class="projects">
+    <h1>Mis proyectos personales</h1>
     <div class="container">
-        <app-project *ngFor="let p of projects; let i=index"[titulo]="p.Nombre" [descripcion]="p.Info" [imagen]="p.Imagen" [tecnologias]="p.Tecnologias" [id]="i"></app-project>
+        <app-project *ngFor="let p of projects; let i=index"
+        [onMouseEnter]="onMouseEnter"
+        [onMouseLeave]="onMouseLeave"
+        [project]="p"
+        [id]="i">
+    </app-project>
     </div>
-    <div class="project-info" *ngIf="selectedProject != undefined && selectedProject != null">
-        <div class="tecnologias">
-            <ul>
-                <li *ngFor="let tec of selectedProject!.Tecnologias">{{tec}}</li>
-            </ul>
-        </div>
-        
+    <p>{{selectedProject?.Nombre}}</p>
+    <div class="tecnologias">
+        <h3 *ngIf="selectedProject.Tecnologias.length > 0">Tecnologias usadas en la aplicacion</h3>
+        <ul>
+            <li *ngFor="let t of selectedProject.Tecnologias">{{t}}</li>
+        </ul>
     </div>
 </div>

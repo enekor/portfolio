@@ -33,16 +33,12 @@
   background-color: rgba(0, 0, 0, 0.623);
   border-radius: 20px;
   position: absolute;
-  top: 90%;
+  top: 84%;
   width: 100%;
   max-width: 30vw;
   transition: top 0.5s;
 }
-.card-content.hidden{
-  opacity: 0%;
-}
 
 .card-content.open{
-  top:53%;
-  opacity: 100%;
+  top:70%;
 }

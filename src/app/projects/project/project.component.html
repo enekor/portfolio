@@ -1,7 +1,7 @@
 <div class="card hidden" id="{{id}}" (mouseenter)="onHover()" (mouseleave)="onLeave()">
-  <img class="background" src="/assets{{imagen}}" alt="Image">
+  <img class="background" src="/assets{{project.Imagen}}" alt="Image">
   <div class="card-content hidden" id="c{{id}}">
-    <h3>{{titulo}}</h3>
-    <p class="description">{{descripcion}}</p>
+    <h3>{{project.Nombre}}</h3>
+    <p class="description">{{project.Info}}</p>
   </div>
 </div>
