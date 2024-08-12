@@ -3,3 +3,20 @@
     display: ruby-text;
     
   }
+
+  .info-project{
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+    border-radius: 20px;
+    margin-top: 25px;
+  }
+    .info-project ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: larger;
+    }
+    .info-project h3{
+      text-align: center;
+    }

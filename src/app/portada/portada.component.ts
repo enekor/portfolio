@@ -11,6 +11,9 @@ import { ArrowDownComponent } from "../globalComponents/arrow-down/arrow-down.co
     imports: [FontAwesomeModule, CommonModule, ArrowDownComponent]
 })
 export class PortadaComponent {
+
+
+
   goToAboutMe() {
     window.location.href = '/about-me'
   }

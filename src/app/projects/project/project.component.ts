@@ -40,4 +40,12 @@ export class ProjectComponent {
     this.onMouseLeave(this.project)
   }
 
+  onClick(){
+    console.log('lsjn');
+    console.log(this.project.Link);
+    
+    
+    window.open(this.project.Link, '_blank');
+  }
+
 }

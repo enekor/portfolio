@@ -8,12 +8,12 @@
         [id]="i">
         </app-project>
     </div>
+
     <div class="info-project">
-        <h2 id="sel-proj-name"></h2>
-        <h3 *ngIf="tecnologiasSeleccionadas.length > 0">Tecnologias usadas</h3>
-        <ul id="sel-tecnologias">
-            <li *ngFor="let t of tecnologiasSeleccionadas">{{t}}</li>
-        </ul>
+        <h2 style="text-align: center;">Pase por encima un proyecto para ver las tecnologías utilizadas, seleccionelo para ser redirigido a su repositorio</h2>
+        <hr>
+        <h3 id="sel-proj-name"></h3>
+        <ul id="sel-tecnologias"></ul>
     </div>
     
 </div>

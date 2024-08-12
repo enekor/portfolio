@@ -42,3 +42,7 @@
 .card-content.open{
   top:70%;
 }
+
+.card:hover{
+  cursor:pointer;
+}

@@ -12,11 +12,11 @@ import { ProjectComponent } from "./project/project.component";
     imports: [FontAwesomeModule, CommonModule, ProjectComponent]
 })
 export class ProjectsComponent {
-  tecnologiasSeleccionadas:string[] = []
+  hayTecnologias = false
   projects = [
-    new Project("Gastoscopio","/projects/gastoscopio.jpg","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
-    new Project("BTools","/projects/btools.jpg","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
-    new Project("PokeCounter","/projects/pokecounter.jpg", "https://github.com/enekor/PokeCounter",["Kotlin","Android Jetpack"],"Aplicación de conteo de racha de pokemon")
+    new Project("Gastoscopio","/projects/gastoscopio.png","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
+    new Project("BTools","/projects/btools.png","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
+    new Project("PokeCounter","/projects/pokecounter.png", "https://github.com/enekor/PokeCounter",["Kotlin","Android Jetpack"],"Aplicación de conteo de racha de pokemon")
   ]
 
   onMouseEnter(p:Project){
@@ -27,6 +27,7 @@ export class ProjectsComponent {
     for(let t of p.Tecnologias){
       lis.push("<li>"+t+"</li>")
     }
+    this.hayTecnologias = true
     document.getElementById('sel-tecnologias')!.innerHTML = lis.join('')
   }
 

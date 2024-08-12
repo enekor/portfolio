@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowUpRightFromSquare, faBriefcase, faEnvelope, faGear, faPen, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Experience } from '../../models/experience';
 import { CommonModule } from '@angular/common';
 import { Titles } from '../../models/Titles';
-import { Project } from '../../models/Project';
+import { Info } from '../../models/Info';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +13,9 @@ import { Project } from '../../models/Project';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  faEmail = faEnvelope
-  faPhone = faPhone
-  faWork = faBriefcase
-  faBrain = faGear
-  faTitulitis = faPen
-  faLink = faArrowUpRightFromSquare
+
+  tituloSel:Titles | undefined = undefined;
+  info:Info = new Info('Eneko Rebollo Hernandez','+34 639914542','enekorebollo@gmail.com','','https://media.licdn.com/dms/image/D4D03AQHfX3RwGHGQfQ/profile-displayphoto-shrink_200_200/0/1676305223208?e=2147483647&v=beta&t=WpwhjKdlAEcX---HS-4OK8w11dBboTnqTnWwSbUah8Q','https://github.com/enekor','https://www.linkedin.com/in/enekorebollo/')
 
   experiencias = [
     new Experience("Originpath","2022",[".NET","Python","Angular","Java","SpringBoot"],"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_OMiz8nP0c14NvTZ-rPSYfgIDtOVW6sNQ&s"),
@@ -27,37 +23,24 @@ export class HomeComponent {
   ]
 
   titulos = [
-    new Titles("Desarrollo de aplicaciones multiplataforma","","/certificados/dam.png"),
-    new Titles("EFSET C2","https://github.com/enekor/MisCertificados/blob/almacenamiento/certificados/EF%20SET%20Certificate.pdf","/certificados/efset.png"),
-    new Titles("Certificados android","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Android","/certificados/android.png"),
-    new Titles("Certificados API","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Api","/certificados/api.png"),
-    new Titles("Certificados Java/Kotlin","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JavaKotlin","/certificados/jdk.png"),
-    new Titles("Certificados Git","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Git","/certificados/git.png"),
-    new Titles("Certificados Javascript","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JS","/certificados/js.png"),
+    new Titles("Desarrollo de aplicaciones multiplataforma","","assets/certificados/dam.png"),
+    new Titles("EFSET C2","https://github.com/enekor/MisCertificados/blob/almacenamiento/certificados/EF%20SET%20Certificate.pdf","assets/certificados/efset.png"),
+    new Titles("Certificados android","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Android","assets/certificados/android.png"),
+    new Titles("Certificados API","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Api","assets/certificados/api.png"),
+    new Titles("Certificados Java/Kotlin","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JavaKotlin","assets/certificados/jdk.png"),
+    new Titles("Certificados Git","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/Git","assets/certificados/git.png"),
+    new Titles("Certificados Javascript","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JS","assets/certificados/js.png"),
   ]
 
-  lenguajes = [
-    "c%23-%23239120",
-    "dart-%230175C2",
-    "html5-%23E34F26",
-    "kotlin-%237F52FF",
-    "markdown-%23000000",
-    "python-3670A0",
-    "firebase-%23039BE5",
-    ".NET-5C2D91",
-    "blazor-%235C2D91",
-    "bootstrap-%238511FA",
-    "Flutter-%2302569B",
-    "mysql-%2300000f",
-    "Firebase-039BE5",
-    "MariaDB-003545",
-    "sqlite-%2307405e",
-    "postgres-%23316192",
-    "docker-%230db7ed",
-    "sonarqube-4E9BCD",
-    "Gradle-02303A",
-    "Postman-FF6C37",
-    "SonarQube-black",
-    "java-%23ED8B00"
-  ]
+  onCv() {
+    window.open(this.info.UrlCv, '_blank');
+  }
+
+  onTitulo(){
+    window.open(this.tituloSel?.Url,"_blank");
+  }
+
+  selectTitulo(titulo:Titles){
+    this.tituloSel = titulo;
+  }
 }
