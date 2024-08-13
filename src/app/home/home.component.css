@@ -92,6 +92,23 @@ hr{
     justify-content: space-evenly;
     text-align: center;
 }
+  .experiencia{
+    overflow-y: scroll;
+    height: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--secondary-color);
+
+    
+  }
+    .card .experiencia a:hover, .card .experiencia .sel-titulo:hover{
+      cursor: pointer;
+      font-weight: bold;
+    }
+     .exp-icons{
+      display: flex;
+      justify-content: space-between;
+    }
+
 
 .sel-titulo:hover{
   cursor: pointer;
@@ -109,3 +126,49 @@ hr{
   width: auto;
   height: 150px;
 }
+
+.lenguajes{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+}
+
+.icon-languaje{
+  width: 70px;
+  height: auto;
+}
+
+.scroll-container{
+  height:100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel-primary,.carousel-secondary{
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:70%;
+  left:0%;
+}
+
+.carousel-primary{
+  display: flex;
+  justify-content: space-around;
+  animation: scroll-horizontal 20s linear infinite;
+}
+.carousel-secondary{
+  animation: scroll-horizontal 20s linear infinite;
+  animation-delay: 10s;
+}
+
+@keyframes scroll-horizontal {
+  0%{
+    left:100%;
+  }
+  100%{
+    left:-100%
+  }
+}
+

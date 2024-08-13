@@ -1,6 +1,7 @@
 <div class="row">
     <div class="card-info">
-        <img class="circular-square" [src]="info.UrlProfilePicture" alt="Profile Picture">
+        <!-- <img class="circular-square" [src]="info.UrlProfilePicture" alt="Profile Picture"> -->
+        <img class="circular-square" [src]="" alt="Profile Picture">
         <p class="lato-bold">{{info.Name}}</p>
         <p class="lato-bold">Backend-developer</p>
         <div class="center">
@@ -25,9 +26,9 @@
     </div>
     <div class="card-center">
         <div class="card titulitis div1">
-            <ul>
-                <li class="sel-titulo" *ngFor="let titulo of this.titulos" (click)="selectTitulo(titulo)">{{titulo.Nombre}}</li>
-            </ul>
+
+                <span class="sel-titulo" *ngFor="let titulo of this.titulos" (click)="selectTitulo(titulo)">{{titulo.Nombre}}<br/></span>
+
         </div>
         <div class="card documentos div2">
             <ng-container *ngIf="this.tituloSel!=undefined; else elseTemplate">
@@ -45,7 +46,32 @@
             </ng-template>
             
         </div>
-        <div class="card experiencia div3"></div>
-        <div class="card lenguajes div4"></div>
+        <div class="card experiencia div3">
+            <ng-container *ngIf="expSel == undefined; else elseTemplate2">
+                <span class="sel-titulo" *ngFor="let exp of this.experiencias" (click)="selectExp(exp)">{{exp.Nombre}}</span>
+            </ng-container>
+            <ng-template #elseTemplate2>
+                <img [src]="expSel?.Foto" alt="Imagen de {{expSel?.Nombre}}" class="img-title circular-square"/>
+                <span class="lato-regular">{{expSel?.ExtraInfo}}</span>
+                <span><b>Lenguajes y tecnologías utilizadas</b></span>
+                <div class="exp-icons">
+                    <img class="icon" src="assets/svg/{{lang}}.svg" alt="{{lang}}" *ngFor="let lang of expSel?.Skills" title="{{lang}}"> 
+                </div>
+                <a class="sel-titulo" (click)="selectExp(undefined)">Atras</a>
+            </ng-template>
+            
+        </div>
+        <div class="card lenguajes div4">
+                <div class="carousel-primary">
+
+                    <img class="icon-languaje" *ngFor="let tec of lenguajes" src="assets/svg/{{tec}}.svg" alt="{{tec}}" title="{{tec}}">
+                </div>
+                
+                <div class="carousel-secondary">
+
+                    <img class="icon-languaje" *ngFor="let tec of lenguajes" src="assets/svg/{{tec}}.svg" alt="{{tec}}" title="{{tec}}">
+                </div>
+
+        </div>
     </div>
 </div>

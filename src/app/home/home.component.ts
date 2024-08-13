@@ -15,11 +15,12 @@ import { Info } from '../../models/Info';
 export class HomeComponent {
 
   tituloSel:Titles | undefined = undefined;
+  expSel:Experience | undefined = undefined;
   info:Info = new Info('Eneko Rebollo Hernandez','+34 639914542','enekorebollo@gmail.com','','https://media.licdn.com/dms/image/D4D03AQHfX3RwGHGQfQ/profile-displayphoto-shrink_200_200/0/1676305223208?e=2147483647&v=beta&t=WpwhjKdlAEcX---HS-4OK8w11dBboTnqTnWwSbUah8Q','https://github.com/enekor','https://www.linkedin.com/in/enekorebollo/')
 
   experiencias = [
-    new Experience("Originpath","2022",[".NET","Python","Angular","Java","SpringBoot"],"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_OMiz8nP0c14NvTZ-rPSYfgIDtOVW6sNQ&s"),
-    new Experience("Inypsa Airtificial","2022-Actualidad",[".NET","Python","Angular","Blazor"],"https://pcbolsa.com/Logos/M_ES0152768612.jpg")
+    new Experience("Originpath","2022",["dotnet","python","angular","java","spring"],"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_OMiz8nP0c14NvTZ-rPSYfgIDtOVW6sNQ&s"),
+    new Experience("Inypsa Airtificial","2022-Actualidad",["dotnet","python","angular","blazor"],"https://pcbolsa.com/Logos/M_ES0152768612.jpg")
   ]
 
   titulos = [
@@ -32,6 +33,10 @@ export class HomeComponent {
     new Titles("Certificados Javascript","https://github.com/enekor/MisCertificados/tree/almacenamiento/certificados/JS","assets/certificados/js.png"),
   ]
 
+  lenguajes = ["dotnet", "python", "angular", "java", "spring", "blazor", "javascript", "typescript",
+   "html", "css", "oraclesql","sqlite","postgresql","mysql", "kotlin","flutter","dart","csharp"
+  ]
+
   onCv() {
     window.open(this.info.UrlCv, '_blank');
   }
@@ -42,5 +47,9 @@ export class HomeComponent {
 
   selectTitulo(titulo:Titles){
     this.tituloSel = titulo;
+  }
+
+  selectExp(exp:Experience | undefined){
+    this.expSel = exp; 
   }
 }
