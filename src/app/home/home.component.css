@@ -100,11 +100,11 @@ hr{
     overflow-y: scroll;
     height: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) var(--secondary-color);
-
+    scrollbar-color: var(--primary-color-opaque) var(--secondary-color-opaque);
+    
     
   }
-    .card .experiencia a:hover, .card .experiencia .sel-titulo:hover{
+    .card .experiencia a:hover, .card .experiencia .sel-titulo:hover, .profile:hover{
       cursor: pointer;
       font-weight: bold;
     }

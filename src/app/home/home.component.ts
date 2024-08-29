@@ -37,6 +37,10 @@ export class HomeComponent {
    "html", "css", "oraclesql","sqlite","postgresql","mysql", "kotlin","flutter","dart","csharp"
   ]
 
+  onProfile(){
+    window.history.back();
+  }
+  
   onCv() {
     window.open(this.info.UrlCv, '_blank');
   }

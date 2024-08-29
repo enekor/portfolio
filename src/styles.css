@@ -2,7 +2,9 @@
 
 :root{
   --primary-color: #f5cac3;
+  --primary-color-opaque: #f5cac35f;
   --secondary-color: #f6bd60;
+  --secondary-color-opaque: #f6bd6036;
   --terciary-color: #84a59d;
   --background-color: #282a36;
 

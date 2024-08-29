@@ -1,7 +1,14 @@
-<div (click)="onClick()" class="card hidden" id="{{id}}" (mouseenter)="onHover()" (mouseleave)="onLeave()">
-  <img class="background" src="/assets{{project.Imagen}}" alt="Image">
-  <div class="card-content hidden" id="c{{id}}">
-    <h3>{{project.Nombre}}</h3>
-    <p class="description">{{project.Info}}</p>
+<div class="card" (click)="onClick()">
+  <img src="{{project.Imagen}}" alt="Icono de {{project.Nombre}}" class >
+  <div class="card__content">
+    <p class="card__title">{{project.Nombre}}</p>
+    <div class="card__description">
+      <b class="lato-bold">{{project.Info}}</b>
+      <br>
+      <p class="lato-regular">Tecnologias utilizadas:</p>
+      <ul>
+        <li class="lato-regular" *ngFor="let skill of project.Tecnologias">{{skill}}</li>
+      </ul>
+    </div>
   </div>
 </div>

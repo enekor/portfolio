@@ -1,19 +1,8 @@
 <div class="projects">
-    <h1>Mis proyectos personales</h1>
-    <div class="container">
-        <app-project *ngFor="let p of projects; let i=index"
-        [onMouseEnter]="onMouseEnter"
-        [onMouseLeave]="onMouseLeave"
-        [project]="p"
-        [id]="i">
-        </app-project>
-    </div>
-
-    <div class="info-project">
-        <h2 style="text-align: center;">Pase por encima un proyecto para ver las tecnologías utilizadas, seleccionelo para ser redirigido a su repositorio</h2>
-        <hr>
-        <h3 id="sel-proj-name"></h3>
-        <ul id="sel-tecnologias"></ul>
-    </div>
-    
+<h1 class="lato-bold">Mis proyectos personales</h1>
+<div class="container">
+    <app-project *ngFor="let p of projects; let i=index"
+    [project]="p">
+    </app-project>
+</div>
 </div>

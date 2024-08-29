@@ -14,9 +14,9 @@ import { ProjectComponent } from "./project/project.component";
 export class ProjectsComponent {
   hayTecnologias = false
   projects = [
-    new Project("Gastoscopio","/projects/gastoscopio.png","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
-    new Project("BTools","/projects/btools.png","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
-    new Project("PokeCounter","/projects/pokecounter.png", "https://github.com/enekor/PokeCounter",["Kotlin","Android Jetpack"],"Aplicación de conteo de racha de pokemon")
+    new Project("Gastoscopio","/assets/projects/gastoscopio.png","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
+    new Project("BTools","/assets/projects/btools.png","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
+    new Project("PokeCounter","/assets/projects/pokecounter.png", "https://github.com/enekor/PokeCounter",["Kotlin","Android Jetpack"],"Aplicación de conteo de racha de pokemon")
   ]
 
   onMouseEnter(p:Project){

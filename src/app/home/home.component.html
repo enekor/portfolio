@@ -1,8 +1,7 @@
 <div class="row">
     <div class="card-info">
-        <!-- <img class="circular-square" [src]="info.UrlProfilePicture" alt="Profile Picture"> -->
-        <img class="circular-square" [src]="" alt="Profile Picture">
-        <p class="lato-bold">{{info.Name}}</p>
+        <img (click)="onProfile()" class="circular-square profile" [src]="info.UrlProfilePicture" alt="Profile Picture">
+        <p (click)="onProfile()" class="lato-bold profile">{{info.Name}}</p>
         <p class="lato-bold">Backend-developer</p>
         <div class="center">
             <button (click)="onCv()" type="button" class="button-cv">Descargar Cv</button>
