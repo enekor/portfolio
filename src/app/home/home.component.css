@@ -75,6 +75,10 @@ hr{
   border-radius: 5px 5px 5px 5px;
   padding: 10px;
 }
+  .button-cv:hover{
+    cursor: pointer;
+    background-color: var(--primary-color);
+  }
 
 .center{
   display: flex;
@@ -135,40 +139,31 @@ hr{
 }
 
 .icon-languaje{
-  width: 70px;
-  height: auto;
+  height: 70px;
+  width: auto;
 }
 
-.scroll-container{
-  height:100%;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.carousel-primary,.carousel-secondary{
+.carousel{
   overflow: hidden;
   white-space: nowrap;
   position: absolute;
-  top:70%;
-  left:0%;
+  top:40%;
+  left:100%;
 }
 
-.carousel-primary{
+.carousel{
   display: flex;
   justify-content: space-around;
-  animation: scroll-horizontal 20s linear infinite;
-}
-.carousel-secondary{
-  animation: scroll-horizontal 20s linear infinite;
-  animation-delay: 10s;
+  animation: scroll-horizontal 10s linear infinite;
 }
 
 @keyframes scroll-horizontal {
-  0%{
-    left:100%;
-  }
-  100%{
-    left:-100%
+  0% {
+    left: -330%;
+  };
+  100% {
+    left: 100%;
   }
 }
+
 
