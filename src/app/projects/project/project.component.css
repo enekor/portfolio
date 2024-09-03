@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
@@ -49,14 +49,14 @@
 .card__title {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: #d8d8d8;
   font-weight: 700;
 }
 
 .card__description {
   margin: 10px 0 0;
   font-size: 14px;
-  color: #777;
+  color: #ffffff;
   line-height: 1.4;
 }
 

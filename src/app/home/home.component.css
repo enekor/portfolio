@@ -4,12 +4,6 @@
   border-bottom-right-radius: 50% 50%;
   border-bottom-left-radius: 50% 50%;
 }
-
-.icon{
-  width: 30px;
-  height: 30px;
-}
-
 .card-info, .info{
   display:flex;
   flex-direction: column;
@@ -50,6 +44,11 @@
   .div3 { grid-area: 4 / 1 / 7 / 4; }
   .div4 { grid-area: 4 / 4 / 7 / 7; }
 
+  .div1, .div3{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color-opaque) var(--secondary-color-opaque);
+  }
 .row{
   display: flex;
   flex-direction: row;
@@ -85,17 +84,7 @@ hr{
   justify-content: space-around;
 }
 
-.card{
-  background-color: var(--secondary-color);
-  border-radius: 20px 20px 20px 20px;
-  padding: 10px;
-  margin: 15px;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-}
+
   .experiencia{
     overflow-y: scroll;
     height: auto;
@@ -104,17 +93,16 @@ hr{
     
     
   }
-    .card .experiencia a:hover, .card .experiencia .sel-titulo:hover, .profile:hover{
-      cursor: pointer;
-      font-weight: bold;
-    }
-     .exp-icons{
-      display: flex;
-      justify-content: space-between;
-    }
+  .exp-icons{
+    display: flex;
+    justify-content: space-between;
+  }
 
-
-.sel-titulo:hover{
+.sel-titulo{
+  font-size: 20px;
+  margin-inline: 20px;
+}
+.sel-titulo:hover, .profile:hover{
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
@@ -128,7 +116,7 @@ hr{
 
 .img-title{
   width: auto;
-  height: 150px;
+  height: 120px;
 }
 
 .lenguajes{
@@ -160,7 +148,7 @@ hr{
 @keyframes scroll-horizontal {
   0% {
     left: -330%;
-  };
+  }
   100% {
     left: 100%;
   }

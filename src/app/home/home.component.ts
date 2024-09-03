@@ -56,4 +56,5 @@ export class HomeComponent {
   selectExp(exp:Experience | undefined){
     this.expSel = exp; 
   }
+
 }

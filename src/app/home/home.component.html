@@ -1,10 +1,11 @@
-<div class="row">
-    <div class="card-info">
+<img src="assets/bg.webp" class="background">
+<div class="row main">
+    <div class="card-info trasparentoso">
         <img (click)="onProfile()" class="circular-square profile" [src]="info.UrlProfilePicture" alt="Profile Picture">
         <p (click)="onProfile()" class="lato-bold profile">{{info.Name}}</p>
         <p class="lato-bold">Backend-developer</p>
         <div class="center">
-            <button (click)="onCv()" type="button" class="button-cv">Descargar Cv</button>
+            <a href="assets/CurriculumEneko.pdf" download="CurriculumEneko"><button type="button" class="button-cv">Descargar Cv</button></a>
         </div>
         <hr>
         <div class="info">
@@ -23,20 +24,19 @@
             <a [href]="info.UrlLinkedin" target="_blank"><img class="icon" src="assets/svg/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
-    <div class="card-center">
+    <div class="card-center trasparentoso">
         <div class="card titulitis div1">
 
-                <span class="sel-titulo" *ngFor="let titulo of this.titulos" (click)="selectTitulo(titulo)">{{titulo.Nombre}}<br/></span>
+                <span class="sel-titulo" *ngFor="let titulo of this.titulos" (click)="selectTitulo(titulo)">{{titulo.Nombre}}</span>
 
         </div>
         <div class="card documentos div2">
             <ng-container *ngIf="this.tituloSel!=undefined; else elseTemplate">
                 <div class="show-title">
-                    <img [src]="tituloSel.Image" alt="Imagen de {{tituloSel.Nombre}}" class="img-title stDiv1"/>
-<br>
-                    <span class="lato-regular stDiv2">{{tituloSel.Nombre}}</span>
-<br>
-                    <button class="button-cv stDiv3" type="button" (click)="onTitulo()" >Ver certificado</button>
+                    <img [src]="tituloSel.Image" alt="Imagen de {{tituloSel.Nombre}}" class="img-title "/>
+                    <span class="lato-regular ">{{tituloSel.Nombre}}</span>
+                    <br>
+                    <button class="button-cv " type="button" (click)="onTitulo()" >Ver certificado</button>
 
                 </div>
             </ng-container>
@@ -52,6 +52,7 @@
             <ng-template #elseTemplate2>
                 <img [src]="expSel?.Foto" alt="Imagen de {{expSel?.Nombre}}" class="img-title circular-square"/>
                 <span class="lato-regular">{{expSel?.ExtraInfo}}</span>
+                <br>
                 <span><b>Lenguajes y tecnologías utilizadas</b></span>
                 <div class="exp-icons">
                     <img class="icon" src="assets/svg/{{lang}}.svg" alt="{{lang}}" *ngFor="let lang of expSel?.Skills" title="{{lang}}"> 

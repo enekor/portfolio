@@ -1,8 +1,9 @@
-<div class="projects">
-<h1 class="lato-bold">Mis proyectos personales</h1>
-<div class="container">
-    <app-project *ngFor="let p of projects; let i=index"
-    [project]="p">
-    </app-project>
-</div>
+<img src="assets/bg.webp" class="background">
+<div class="projects main">
+    <h1 class="lato-bold">Mis proyectos personales</h1>
+    <div class="container">
+        <app-project *ngFor="let p of projects; let i=index"
+        [project]="p">
+        </app-project>
+    </div>
 </div>

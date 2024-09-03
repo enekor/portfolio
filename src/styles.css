@@ -1,15 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root{
-  --primary-color: #f5cac3;
-  --primary-color-opaque: #f5cac35f;
-  --secondary-color: #f6bd60;
-  --secondary-color-opaque: #f6bd6036;
-  --terciary-color: #84a59d;
-  --background-color: #282a36;
+  --primary-color: #6376B8;
+  --primary-color-opaque: #6375b848;
+  --secondary-color: #F4F6CC;
+  --secondary-color-opaque: #f4f6cc48;
+  --terciary-color: #23AFCC;
+  --background-color: #524E4D;
 
 }
 
+.background{
+  position:fixed;
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  left:0;
+  z-index:0;
+  animation: blur 3s infinite;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(5px);
+  }
+  50% {
+    filter: blur(10px);
+  }
+  100%{
+    filter:blur(5px)
+  }
+}
+
+.main{
+  z-index:1;
+  position:relative;
+}
 
 .lato-thin {
   font-family: "Lato", sans-serif;
@@ -74,9 +100,30 @@
 body{
   background: var(--background-color);
   object-fit: cover;
-  color: white;
+  color: black;
   height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
   padding-inline: 18px;
+}
+
+.trasparentoso{
+  opacity:0.8;
+}
+
+.card{
+  background-color: var(--secondary-color);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px;
+  margin: 15px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.icon{
+  width: 35px;
+  height: 35px;
 }
