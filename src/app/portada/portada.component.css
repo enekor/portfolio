@@ -52,7 +52,7 @@
 
 .header {
   color: var(--terciary-color);
-  font-size: 7rem;
+  font-size: 8rem;
   height: 100vh;
   width: 100vw;
   max-width: 100%;
@@ -73,10 +73,11 @@
 
 .header h1{
     font-size: larger;
+    margin-block: 1px;
 }
 
 .header:hover {
-  animation: color-change 2s infinite;
+  animation: color-change s infinite;
 }
 
 @keyframes color-change {
@@ -90,10 +91,10 @@
     color: var(--secondary-color);
   }
   50%{
-    color:var(--primary-color)
+    color:var(--terciary-color)
   }
   0% {
-    color: var(--secondary-color);
+    color: var(--primary-color);
   }
 }
 
