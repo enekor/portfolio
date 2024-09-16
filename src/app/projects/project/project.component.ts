@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Project } from '../../../models/Project';
 
 @Component({
@@ -14,5 +14,13 @@ export class ProjectComponent {
 
   onClick(){
     window.open(this.project.Link, "_blank");
+  }
+
+  onButtonClick(version:number){
+    if(version == 1){
+      window.open(this.project.Link, "_blank");
+    }else{
+      window.open(this.project.Link2, "_blank");
+    }
   }
 }

@@ -27,14 +27,7 @@
   gap: 20px;
 }
 
-.button {
-  text-align: center;
-  margin-inline: 5px;
-  border-radius: 12px;
-  background-color: var(--secondary-color);
-  padding: 15px;
-  font-size: 5rem;
-}
+
 
 .img-button-container:hover .button{
   animation: color-change-rainbow 5s infinite;
@@ -134,7 +127,8 @@
 
 }
 .button p{
-  color:black
+  color:black;
+
 }
 
 

@@ -14,23 +14,8 @@ import { ProjectComponent } from "./project/project.component";
 export class ProjectsComponent {
   hayTecnologias = false
   projects = [
-    new Project("Gastoscopio","/assets/projects/gastoscopio.png","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos"),
+    new Project("Gastoscopio","/assets/projects/gastoscopio.png","https://github.com/enekor/Gastoscopio",["Flutter","Firebase"],"Aplicación de gestión de gastos","https://fcuentas-3e40c.web.app"),
     new Project("BTools","/assets/projects/btools.png","https://github.com/enekor/BTools",["Flutter","Firebase"],"Aplicación de herramientas básicas"),
     new Project("PokeCounter","/assets/projects/pokecounter.png", "https://github.com/enekor/PokeCounter",["Kotlin","Android Jetpack"],"Aplicación de conteo de racha de pokemon")
   ]
-
-  onMouseEnter(p:Project){
-    console.log('Pito gigante')
-    document.getElementById('sel-proj-name')!.innerText = p.Nombre
-
-    let lis:string[] = []
-    for(let t of p.Tecnologias){
-      lis.push("<li>"+t+"</li>")
-    }
-    this.hayTecnologias = true
-    document.getElementById('sel-tecnologias')!.innerHTML = lis.join('')
-  }
-
-  onMouseLeave(p:Project){
-  }
 }

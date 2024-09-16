@@ -9,6 +9,10 @@
       <ul>
         <li class="lato-regular" *ngFor="let skill of project.Tecnologias">{{skill}}</li>
       </ul>
+      <div class="url-buttons" *ngIf="project.Nombre == 'Gastoscopio'">
+        <button (click)="onButtonClick(1)" class="button">Github</button>
+        <button (click)="onButtonClick(2)" class="button">Web</button>
+      </div>
     </div>
   </div>
 </div>
