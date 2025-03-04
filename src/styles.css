@@ -1,1 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #121212;
+    --primary-color: #1E1E1F;
+    --secondary-color: #2B2B2C;
+    --accent-color: #9B62FF;
+    --text-color: #FFFFFF;
+}
+html, body {
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}

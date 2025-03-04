@@ -1,0 +1,32 @@
+<div class="maincard">
+  <div class="row">
+    <img src="assets/eneko.jpg" alt="Foto de eneko" />
+    <div class="column">
+      <h1>ENEKO REBOLLO HERNANDEZ</h1>
+      <div class="row">
+        <app-info-chip textToShow="Backend developer"></app-info-chip>
+        <app-info-chip textToShow="Flutter enthusiast"></app-info-chip>
+      </div>
+    </div>
+  </div>
+
+  <div class="pager">
+    <div class="row">
+        <label>About me</label>
+        <label>Proyectos</label>
+        <label>CV</label>
+    </div>
+  </div>
+
+  <div class="icons">
+    <div class="svg">
+        <app-github (click)="openLinkInNewTab('https://www.github.com/enekor')"></app-github>
+    </div>
+    <div class="vsg">
+        <app-linkedin (click)="openLinkInNewTab('https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/')"></app-linkedin>
+    </div>
+    <div class="vsg">
+        <app-mail (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')"></app-mail>
+    </div>
+  </div>
+</div>

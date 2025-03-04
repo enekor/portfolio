@@ -1,0 +1,72 @@
+.maincard {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 34px;
+  margin: 20px;
+  transition: all 0.3s;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.maincard h1 {
+  color: var(--accent-color);
+}
+
+.maincard img {
+  border-radius: 50%;
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  object-fit: cover;
+  margin-right: 10px; /* Adjust the margin as needed */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.maincard .pager .row {
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--secondary-color);
+  border-radius: 9px 9px 24px 9px;
+  padding: 20px;
+}
+.maincard .pager .row label {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 500;
+  padding-inline: 10px;
+  transition: color 0.3s;
+}
+
+.maincard .pager .row label:hover {
+  cursor: pointer;
+  color: darkviolet;
+}
+.maincard .pager {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  margin: 20px;
+}
+
+.maincard {
+  position: relative;
+}
+
+.maincard .icons{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  margin: 20px;
+  background-color: blue;
+}
+
+.maincard .icons .row .svg{
+    height: auto;
+    width: 30px;
+    color: red;
+}
