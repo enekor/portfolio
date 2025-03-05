@@ -60,13 +60,19 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: auto;
   margin: 20px;
-  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.maincard .icons .row .svg{
+.svg{
     height: auto;
     width: 30px;
-    color: red;
+    filter: brightness(10) invert(1);
+}
+
+.svg:hover{
+  filter: brightness(10) invert(1);
+  
 }

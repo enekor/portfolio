@@ -12,21 +12,27 @@
 
   <div class="pager">
     <div class="row">
-        <label>About me</label>
-        <label>Proyectos</label>
-        <label>CV</label>
+      <label>About me</label>
+      <label>Proyectos</label>
+      <label>CV</label>
     </div>
   </div>
 
   <div class="icons">
-    <div class="svg">
-        <app-github (click)="openLinkInNewTab('https://www.github.com/enekor')"></app-github>
-    </div>
-    <div class="vsg">
-        <app-linkedin (click)="openLinkInNewTab('https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/')"></app-linkedin>
-    </div>
-    <div class="vsg">
-        <app-mail (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')"></app-mail>
-    </div>
+    <app-github class="svg"
+      (click)="openLinkInNewTab('https://www.github.com/enekor')"
+    ></app-github>
+
+    <app-linkedin class="svg"
+      (click)="
+        openLinkInNewTab(
+          'https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/'
+        )
+      "
+    ></app-linkedin>
+
+    <app-mail class="svg"
+      (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')"
+    ></app-mail>
   </div>
 </div>
