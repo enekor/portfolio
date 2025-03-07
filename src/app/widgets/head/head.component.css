@@ -73,6 +73,6 @@
 }
 
 .svg:hover{
-  filter: brightness(10) invert(1);
+  filter: brightness(10) invert(4) saturate(2);
   
 }
