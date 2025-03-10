@@ -24,3 +24,9 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+.svg{
+    height: auto;
+    width: 30px;
+    filter: brightness(10) invert(1);
+}

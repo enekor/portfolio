@@ -42,8 +42,13 @@
 
 .maincard .pager .row label:hover {
   cursor: pointer;
+  color: violet;
+}
+
+.maincard .pager .row label.selectedLabel{
   color: darkviolet;
 }
+
 .maincard .pager {
   position: absolute;
   bottom: 0;
@@ -66,13 +71,7 @@
   gap: 20px;
 }
 
-.svg{
-    height: auto;
-    width: 30px;
-    filter: brightness(10) invert(1);
-}
-
 .svg:hover{
-  filter: brightness(10) invert(4) saturate(2);
+  filter: brightness(0) saturate(100%) invert(19%) sepia(72%) saturate(3922%) hue-rotate(353deg) brightness(90%) contrast(97%);
   
 }

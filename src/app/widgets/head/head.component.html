@@ -12,9 +12,9 @@
 
   <div class="pager">
     <div class="row">
-      <label>About me</label>
-      <label>Proyectos</label>
-      <label>CV</label>
+      <label [class]="page == 0 ? 'selectedLabel' : ''" (click)="changePage(0)">About me</label>
+      <label [class]="page == 1 ? 'selectedLabel' : ''" (click)="changePage(1)">Projects</label>
+      <label [class]="page == 2 ? 'selectedLabel' : ''" (click)="changePage(2)">CV</label>
     </div>
   </div>
 
