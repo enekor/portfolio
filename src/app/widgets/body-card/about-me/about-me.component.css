@@ -4,6 +4,11 @@
     justify-content: space-around;
 }
 
-.skillRow app-skill-card .svg{
-    width:15px;
+.skillRow .svg{
+    margin-inline:12px;
+    margin-top: 3px;
+}
+
+.aboutMeText{
+    margin:30px;
 }

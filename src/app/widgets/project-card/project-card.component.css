@@ -1,0 +1,52 @@
+.project .projectInfo .icons .svg{
+    height: auto;
+    width:30px;
+}
+
+.project .projectInfo .icons .svg:hover{
+    filter: brightness(0) saturate(100%) invert(19%) sepia(72%) saturate(3922%) hue-rotate(353deg) brightness(90%) contrast(97%);
+    cursor: pointer;
+}
+
+.project{
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project .projectInfo{
+    background-color: #191919;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.project .projectInfo .icons{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.project .projectInfo{
+    opacity: 0;
+    transform: translate(100%, -50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.project:hover .projectInfo{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+

@@ -73,5 +73,4 @@
 
 .svg:hover{
   filter: brightness(0) saturate(100%) invert(19%) sepia(72%) saturate(3922%) hue-rotate(353deg) brightness(90%) contrast(97%);
-  
 }
