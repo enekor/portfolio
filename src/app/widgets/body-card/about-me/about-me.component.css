@@ -1,0 +1,9 @@
+
+.skillRow{
+    display: flex;
+    justify-content: space-around;
+}
+
+.skillRow app-skill-card .svg{
+    width:15px;
+}
