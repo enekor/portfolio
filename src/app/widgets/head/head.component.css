@@ -1,3 +1,4 @@
+/* Estilos generales para pantallas grandes */
 .maincard {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -8,6 +9,7 @@
   max-width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
 }
 
 .maincard h1 {
@@ -18,13 +20,31 @@
 
 .maincard img.profileImage {
   border-radius: 50%;
-  width: 150px; /* Adjust the width as needed */
-  height: 150px; /* Adjust the height as needed */
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px;
   display: block;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.maincard .namePhoto{
+  display:flex
+}
+
+.maincard .infoRow {
+  display: flex;
+  margin-top: -65px;
+  margin-left: 10rem;
+}
+
+.maincard .pager {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  margin: 20px;
 }
 
 .maincard .pager .row {
@@ -34,6 +54,7 @@
   border-radius: 9px 9px 24px 9px;
   padding: 20px;
 }
+
 .maincard .pager .row label {
   color: var(--text-color);
   font-size: 20px;
@@ -46,23 +67,11 @@
   color: violet;
 }
 
-.maincard .pager .row label.selectedLabel{
+.maincard .pager .row label.selectedLabel {
   color: darkviolet;
 }
 
-.maincard .pager {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: auto;
-  margin: 20px;
-}
-
-.maincard {
-  position: relative;
-}
-
-.maincard .icons{
+.maincard .icons {
   position: absolute;
   top: 0;
   right: 0;
@@ -72,11 +81,100 @@
   gap: 20px;
 }
 
-.infoRow{
-  margin-top: -30px;
-}
 
-.svg:hover{
+.svg:hover {
   filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
   cursor: pointer;
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .maincard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 34px;
+    margin: 20px;
+    transition: all 0.3s;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .maincard h1 {
+    color: var(--accent-color);
+    font-size: 36px; /* Ajustado para pantallas más pequeñas */
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .maincard img.profileImage {
+    border-radius: 50%;
+    width: 120px; /* Ajustado para pantallas más pequeñas */
+    height: 120px; /* Ajustado para pantallas más pequeñas */
+    object-fit: cover;
+    margin: 10px 0; /* Ajustado para centrar la imagen */
+  }
+  
+  .maincard .icons {
+    position: static; /* Cambiado para que no se superponga */
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .maincard .pager {
+    position: static; /* Cambiado para que no se superponga */
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .maincard .pager .row {
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 9px;
+    padding: 10px;
+    width: 90%;
+  }
+  
+  .maincard .pager .row label {
+    color: var(--text-color);
+    font-size: 18px;
+    padding-inline: 5px;
+    transition: color 0.3s;
+  }
+  
+  .maincard .pager .row label:hover {
+    cursor: pointer;
+    color: violet;
+  }
+  
+  .maincard .pager .row label.selectedLabel {
+    color: darkviolet;
+  }
+  
+  .infoRow {
+    margin-top: 10px;
+    text-align: center;
+    width: 90%; /* Ajustado para centrar mejor */
+  }
+
+  .maincard .infoRow{
+    display: flex;
+    margin-top: -20px;
+    margin-left: 0rem;
+  }
+  
+  .svg:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
+    cursor: pointer;
+  }
 }

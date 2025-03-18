@@ -8,7 +8,6 @@
     border-radius: 20px;
     width: fit-content;
     transition: scale 0.2s, box-shadow 0.2s;
-    
 }
 
 .skillCard:hover{

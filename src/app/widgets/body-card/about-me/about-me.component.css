@@ -15,3 +15,28 @@
     border-radius: 41px;
     padding: 20px;
 }
+
+@media (max-width: 768px) {
+    .skillRow {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        align-items: center; /* Añade padding para mejor visualización */
+    }
+
+    .spacer{
+        width: 200px;
+    }
+
+    .skillRow .svg {
+        margin-right: 10px; /* Ajusta el margen para pantallas pequeñas */
+        margin-top: 4px;
+    }
+
+    .aboutMeText {
+        margin: 10px; /* Reduce el margen para pantallas pequeñas */
+        background-color: var(--secondary-color);
+        border-radius: 41px;
+        padding: 20px;
+    }
+}
