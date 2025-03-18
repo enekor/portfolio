@@ -1,1 +1,11 @@
-<p>cv works!</p>
+<div class="cvBody">
+    <div class="title">
+        <h3>Curriculum Eneko Rebollo</h3>
+        <img class="svg" src="assets/icons/download/download.svg" alt="Download" (click)="downloadCv()"/>
+        <img class="svg" src="assets/icons/open-in-browser/open-in-browser.svg" alt="Open" (click)="openCv()"/>
+    </div>
+
+    <div class="cvView">
+        <pdf-viewer [src]="'assets/files/cv.pdf'" [render-text]="true" style="height: 100vh;"></pdf-viewer>
+    </div>
+</div>

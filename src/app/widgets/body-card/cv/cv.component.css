@@ -1,0 +1,25 @@
+.svg:hover{
+    cursor: pointer;
+    
+}
+
+.cvBody .title{
+    color: var(--accent-color);
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 22%;
+}
+
+.cvBody .title .svg{
+    margin-inline: 8px;
+    filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
+}
+
+.cvView{
+    border-radius: 30px;
+    overflow: hidden;
+    width: 49rem;
+    margin-left: 22%;
+}

@@ -5,10 +5,13 @@
 }
 
 .skillRow .svg{
-    margin-inline:12px;
-    margin-top: 3px;
+    margin-right: 30px;
+    margin-top: 4px;
 }
 
 .aboutMeText{
     margin:30px;
+    background-color: var(--secondary-color);
+    border-radius: 41px;
+    padding: 20px;
 }

@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { GithubComponent } from "../icons/github/github.component";
-import { OpenInBrowserComponent } from "../icons/open-in-browser/open-in-browser.component";
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [GithubComponent, OpenInBrowserComponent],
+  imports: [],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.css'
 })
@@ -17,4 +15,8 @@ export class ProjectCardComponent {
   @Input() projectLink: string = "";
   @Input() projectWebLink: string = "";
 
+  openInBrowser(link:string){
+    if(link != "")
+      window.open(link, "_blank");
+  }
 }

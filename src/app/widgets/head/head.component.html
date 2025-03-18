@@ -1,11 +1,11 @@
 <div class="maincard">
   <div class="row">
-    <img src="assets/eneko.jpg" alt="Foto de eneko" />
+    <img src="assets/eneko.jpg" alt="Foto de eneko" class="profileImage" />
     <div class="column">
-      <h1>ENEKO REBOLLO HERNANDEZ</h1>
-      <div class="row">
-        <app-info-chip textToShow="Backend developer"></app-info-chip>
-        <app-info-chip textToShow="Flutter enthusiast"></app-info-chip>
+      <h1 class="bold">ENEKO REBOLLO HERNANDEZ</h1>
+      <div class="row infoRow">
+        <app-info-chip class="light" textToShow="Backend developer"></app-info-chip>
+        <app-info-chip class="light" textToShow="Flutter enthusiast"></app-info-chip>
       </div>
     </div>
   </div>
@@ -19,20 +19,15 @@
   </div>
 
   <div class="icons">
-    <app-github class="svg"
-      (click)="openLinkInNewTab('https://www.github.com/enekor')"
-    ></app-github>
 
-    <app-linkedin class="svg"
-      (click)="
+    <img class="svg" src="assets/icons/github/github.svg"
+      (click)="openLinkInNewTab('https://github.com/EnekoRebollo')" />
+    <img class="svg" src="assets/icons/linkedin/linkedin.svg" (click)="
         openLinkInNewTab(
           'https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/'
         )
-      "
-    ></app-linkedin>
+      "/>
 
-    <app-mail class="svg"
-      (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')"
-    ></app-mail>
+    <img src="assets/icons/mail/mail.svg" class="svg" (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')"/>
   </div>
 </div>

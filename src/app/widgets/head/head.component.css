@@ -12,12 +12,14 @@
 
 .maincard h1 {
   color: var(--accent-color);
+  font-size: 49px;
+  margin-top: 25px;
 }
 
-.maincard img {
+.maincard img.profileImage {
   border-radius: 50%;
-  width: 100px; /* Adjust the width as needed */
-  height: 100px; /* Adjust the height as needed */
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
   object-fit: cover;
   margin-right: 10px; /* Adjust the margin as needed */
   display: block;
@@ -35,7 +37,6 @@
 .maincard .pager .row label {
   color: var(--text-color);
   font-size: 20px;
-  font-weight: 500;
   padding-inline: 10px;
   transition: color 0.3s;
 }
@@ -71,6 +72,11 @@
   gap: 20px;
 }
 
+.infoRow{
+  margin-top: -30px;
+}
+
 .svg:hover{
-  filter: brightness(0) saturate(100%) invert(19%) sepia(72%) saturate(3922%) hue-rotate(353deg) brightness(90%) contrast(97%);
+  filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
+  cursor: pointer;
 }
