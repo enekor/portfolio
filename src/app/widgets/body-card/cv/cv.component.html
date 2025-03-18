@@ -6,6 +6,8 @@
     </div>
 
     <div class="cvView">
-        <pdf-viewer [src]="'assets/files/cv.pdf'" [render-text]="true" style="height: 100vh;"></pdf-viewer>
+        <pdf-viewer [src]="'assets/files/cv.pdf'"
+        [fit-to-page]="true" [original-size]="false"
+            [render-text]="true" style="height: 80vh;"></pdf-viewer>
     </div>
 </div>

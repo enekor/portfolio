@@ -26,6 +26,7 @@
 
     .spacer{
         width: 200px;
+        margin-inline: 10px;
     }
 
     .skillRow .svg {
