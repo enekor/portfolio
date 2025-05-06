@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.css'
 })
@@ -13,6 +14,7 @@ export class ProjectCardComponent {
   @Input() projectInfo: string = "";
   @Input() projectName: string = "";
   @Input() projectLink: string = "";
+  @Input() playStoreLink?: string;
   @Input() projectWebLink: string = "";
 
   openInBrowser(link:string){
