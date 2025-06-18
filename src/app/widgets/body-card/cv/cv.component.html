@@ -1,13 +1,26 @@
-<div class="cvBody">
+<div class="cvBody glass-effect" data-aos="fade-up">
     <div class="title">
-        <h3>Curriculum Eneko Rebollo</h3>
-        <img class="svg" src="assets/icons/download/download.svg" alt="Download" (click)="downloadCv()"/>
-        <img class="svg" src="assets/icons/open-in-browser/open-in-browser.svg" alt="Open" (click)="openCv()"/>
+        <h3>Mi Currículum</h3>
+        <div class="actions">
+            <button class="action-button" (click)="downloadCv()">
+                <img class="svg" src="assets/icons/download/download.svg" alt="Download"/>
+                <span>Descargar CV</span>
+            </button>
+            <button class="action-button" (click)="openCv()">
+                <img class="svg" src="assets/icons/open-in-browser/open-in-browser.svg" alt="Open"/>
+                <span>Abrir en navegador</span>
+            </button>
+        </div>
     </div>
 
-    <div class="cvView">
-        <pdf-viewer [src]="'assets/files/cv.pdf'"
-        [fit-to-page]="true" [original-size]="false"
-            [render-text]="true" style="height: 80vh;"></pdf-viewer>
+    <div class="cv-container">
+        <div class="cvView">            <pdf-viewer [src]="'assets/files/cv.pdf'"
+                [render-text]="true"
+                [show-all]="false"
+                [fit-to-page]="true"
+                [zoom]="1"
+                [original-size]="false">
+            </pdf-viewer>
+        </div>
     </div>
 </div>

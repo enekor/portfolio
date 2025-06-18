@@ -6,10 +6,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class PageService {
-  private pageSource = new BehaviorSubject<number>(0);
-  currentPage = this.pageSource.asObservable();
+  private currentPageSubject = new BehaviorSubject<number>(0);
+  currentPage$ = this.currentPageSubject.asObservable();
 
-  changePage(page: number) {
-    this.pageSource.next(page);
+  constructor() {
+    console.log('PageService initialized');
+  }
+
+  setPage(page: number) {
+    console.log('Changing page to:', page);
+    this.currentPageSubject.next(page);
   }
 }

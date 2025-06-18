@@ -1,28 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { InfoChipComponent } from "../info-chip/info-chip.component";
+import { Component } from '@angular/core';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { InfoChipComponent } from '../info-chip/info-chip.component';
 import { PageService } from '../../services/page.service';
 
 @Component({
   selector: 'app-head',
   standalone: true,
-  imports: [InfoChipComponent],
+  imports: [CommonModule, AsyncPipe, InfoChipComponent],
   templateUrl: './head.component.html',
-  styleUrl: './head.component.css'
+  styleUrls: ['./head.component.css']
 })
-export class HeadComponent implements OnInit {
-  constructor(private pageService: PageService) {}
-  
-  page:number = 0;
+export class HeadComponent {
+  constructor(public pageService: PageService) {}
 
-  ngOnInit() {
-    this.pageService.currentPage.subscribe(page => this.page = page);
+  navigate(page: number): void {
+    this.pageService.setPage(page);
   }
 
-  changePage(page: number) {
-    this.pageService.changePage(page);
-  }
-
-  openLinkInNewTab(url: string) {
-    window.open(url, '_blank');
+  openLink(link: string): void {
+    if (link.startsWith('mailto:')) {
+      window.location.href = link;
+    } else {
+      window.open(link, '_blank', 'noopener noreferrer');
+    }
   }
 }

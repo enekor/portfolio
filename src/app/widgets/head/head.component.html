@@ -1,31 +1,55 @@
-<div class="maincard">
-  <div class="namePhoto">
-    <img src="assets/eneko.jpeg" alt="Foto de eneko" class="profileImage" />
-    <h1 class="bold">ENEKO REBOLLO HERNANDEZ</h1>
-  </div>
-  <div class="infoRow">
-    <app-info-chip class="light" textToShow="Backend developer"></app-info-chip>
-    <app-info-chip class="light" textToShow="Flutter enthusiast"></app-info-chip>
-  </div>
-
-  <div class="pager">
-    <div class="row">
-      <label [class]="page == 0 ? 'selectedLabel' : ''" (click)="changePage(0)">About me</label>
-      <label [class]="page == 1 ? 'selectedLabel' : ''" (click)="changePage(1)">Projects</label>
-      <label [class]="page == 2 ? 'selectedLabel' : ''" (click)="changePage(2)">CV</label>
+<div class="maincard glass-effect" data-aos="fade-down">
+  <div class="namePhoto" data-aos="fade-right" data-aos-delay="200">
+    <div class="image-container">
+      <img src="assets/eneko.jpeg" alt="Foto de eneko" class="profileImage hover-effect" />
     </div>
+    <h1 class="bold animate-text">ENEKO REBOLLO HERNANDEZ</h1>
   </div>
 
-  <div class="icons">
+  
+  <div class="infoRow" data-aos="fade-up" data-aos-delay="600">
+    <app-info-chip class="light hover-effect" textToShow="Backend developer"></app-info-chip>
+    <app-info-chip class="light hover-effect" textToShow="Flutter enthusiast"></app-info-chip>
+  </div>
 
-    <img class="svg" src="assets/icons/github/github.svg"
-      (click)="openLinkInNewTab('https://github.com/EnekoRebollo')" />
-    <img class="svg" src="assets/icons/linkedin/linkedin.svg" (click)="
-        openLinkInNewTab(
-          'https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/'
-        )
-      " />
+  <nav class="nav-container">
+    <ul class="nav-list">
+      <li>
+        <button 
+          class="nav-link" 
+          [class.active]="(pageService.currentPage$ | async) === 0" 
+          (click)="navigate(0)">
+          About me
+        </button>
+      </li>
+      <li>
+        <button 
+          class="nav-link" 
+          [class.active]="(pageService.currentPage$ | async) === 1" 
+          (click)="navigate(1)">
+          Projects
+        </button>
+      </li>
+      <li>
+        <button 
+          class="nav-link" 
+          [class.active]="(pageService.currentPage$ | async) === 2" 
+          (click)="navigate(2)">
+          CV
+        </button>
+      </li>
+    </ul>
+  </nav>
 
-    <img src="assets/icons/mail/mail.svg" class="svg" (click)="openLinkInNewTab('mailto:enekorebollo@gmail.com')" />
+  <div class="social-links" data-aos="fade-up" data-aos-delay="800">
+    <button class="icon-button" (click)="openLink('https://github.com/enekor')"><!--por favor deja de cambiarmelo, el que pones es otro-->
+      <img alt="Github" class="svg" src="assets/icons/github/github.svg" />
+    </button>
+    <button class="icon-button" (click)="openLink('https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/')">
+      <img alt="LinkedIn" class="svg" src="assets/icons/linkedin/linkedin.svg" />
+    </button>
+    <button class="icon-button" (click)="openLink('mailto:enekorebollo@gmail.com')">
+      <img alt="Email" class="svg" src="assets/icons/mail/mail.svg" />
+    </button>
   </div>
 </div>

@@ -1,12 +1,12 @@
-<div class="project">
-    <img src="{{projectImage}}" alt="{{projectName}}" class="pImage">
-    <div class="projectInfo">
+<div class="project glass-effect hover-effect" data-aos="fade-up">
+    <img src="{{projectImage}}" alt="{{projectName}}" class="pImage hover-effect">
+    <div class="projectInfo" data-aos="fade-right" data-aos-delay="200">
         <p class="projectName">{{projectName}}</p>
         <p class="projectInfoText">{{projectInfo}}</p>
-        <div class="icons">
-            <img (click)="openInBrowser(projectLink)" src="assets/icons/github/github.svg" class="svg" />
-            <img (click)="openInBrowser(projectWebLink)" src="assets/icons/open-in-browser/open-in-browser.svg" alt="open in browser" class="svg" />
-            <img *ngIf="playStoreLink" (click)="openInBrowser(playStoreLink)" src="assets/icons/playstore/play-store.svg" alt="open in play store" class="svg" />
+        <div class="icons" data-aos="fade-up" data-aos-delay="400">
+            <img (click)="openInBrowser(projectLink)" src="assets/icons/github/github.svg" class="svg" alt="GitHub repository" />
+            <img (click)="openInBrowser(projectWebLink)" src="assets/icons/open-in-browser/open-in-browser.svg" alt="Open in browser" class="svg" />
+            <img *ngIf="playStoreLink" (click)="openInBrowser(playStoreLink)" src="assets/icons/playstore/play-store.svg" alt="Open in Play Store" class="svg" />
         </div>
     </div>
 </div>

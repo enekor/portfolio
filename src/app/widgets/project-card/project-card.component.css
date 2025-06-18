@@ -3,54 +3,93 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+    background: rgba(30, 30, 31, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow);
 }
-.project img {
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(155, 98, 255, 0.2);
+}
+
+.pImage {
     width: 100%;
     height: auto;
     display: block;
+    transition: all 0.5s ease;
 }
 
-.project img.svg{
+.project:hover .pImage {
+    transform: scale(1.05);
+}
+
+.projectInfo {
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(30, 30, 31, 0.95),
+        rgba(30, 30, 31, 0.8)
+    );
+}
+
+.projectName {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.projectInfoText {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.svg {
     height: 30px;
     width: 30px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
 }
-.project img.svg:hover{
+
+.svg:hover {
     filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
     cursor: pointer;
-}
-
-.project .projectInfo{
-    background-color: var(--secondary-color-with-alpha);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border-radius: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    opacity: 0;
-    display: flex;
-    align-content: space-around;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-    transform: translate(-25%, -25%);
-    filter: blur(50px);
-}
-
-.project:hover .projectInfo{
+    transform: translateY(-3px);
     opacity: 1;
-    transform: translate(-50%, -50%);
-    filter: blur(0px);
 }
 
-.project .icons{
-    display:flex;
+/* Animación de brillo al hover */
+.project::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(155, 98, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
 }
-.project .icons .svg{
 
-    margin-inline: 15px;
+.project:hover::after {
+    left: 100%;
 }
 

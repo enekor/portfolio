@@ -1,18 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeadComponent } from "./widgets/head/head.component";
-import { BodyCardComponent } from "./widgets/body-card/body-card.component";
+import { HeadComponent } from './widgets/head/head.component';
+import { BodyCardComponent } from './widgets/body-card/body-card.component';
+import { PageService } from './services/page.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeadComponent, BodyCardComponent],
+  imports: [CommonModule, RouterOutlet, HeadComponent, BodyCardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  constructor() { }
+export class AppComponent implements OnInit {
+  constructor(private pageService: PageService) {}
 
-  title = 'portfolio';
-
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      mirror: false,
+      offset: 100
+    });
+  }
 }

@@ -1,8 +1,10 @@
-<div class="skillCard">
-    <div class="dataRow">
-        <ng-content></ng-content>
+<div class="skillCard glass-effect hover-effect" data-aos="zoom-in">
+    <div class="dataRow" data-aos="fade-right" data-aos-delay="200">
+        <div class="icon-wrapper">
+            <ng-content></ng-content>
+        </div>
         <div class="column">
-            <label class="bold">{{skillName}}</label>
+            <label class="bold gradient-text">{{skillName}}</label>
             <label class="light">{{skillInfo}}</label>
         </div>
     </div>
