@@ -18,3 +18,6 @@ Este portafolio tiene como objetivo mostrar mis habilidades en desarrollo web (A
 ## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Actualizar gh pages
+ng deploy --base-href=/portfolio/
