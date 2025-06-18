@@ -16,13 +16,28 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements OnInit {
   constructor(private pageService: PageService) {}
-
   ngOnInit() {
     AOS.init({
-      duration: 1000,
+      duration: 800,
       once: true,
       mirror: false,
-      offset: 100
+      offset: 50,
+      delay: 100,
+      disable: false,
+      startEvent: 'DOMContentLoaded',
+      disableMutationObserver: false,
+      throttleDelay: 99,
+      debounceDelay: 50,
+      useClassNames: false,
+      initClassName: 'aos-init',
+      animatedClassName: 'aos-animate'
+    });
+
+    // Re-initialize AOS after navigation or dynamic content changes
+    this.pageService.currentPage$.subscribe(() => {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
     });
   }
 }
