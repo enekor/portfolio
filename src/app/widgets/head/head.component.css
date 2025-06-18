@@ -213,6 +213,41 @@
   text-align: center;
 }
 
+/* Typewriter effect */
+.typewriter {
+  font-family: 'Space Grotesk', monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  min-height: 1.2em;
+}
+
+.cursor {
+  display: inline-block;
+  background-color: var(--accent-color);
+  margin-left: 5px;
+  width: 3px;
+  height: 1.2em;
+  animation: blink 1s infinite;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
 /* Estilos específicos para pantallas pequeñas */
 @media (max-width: 768px) {
   .maincard {

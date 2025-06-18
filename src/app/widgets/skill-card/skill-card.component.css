@@ -53,13 +53,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s ease;
 }
 
+.icon-wrapper img,
+.icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(100%);
+    transition: all 0.3s ease;
+}
+
 .skillCard:hover .icon-wrapper {
-    transform: scale(1.1);
+    transform: scale(1.15);
+}
+
+.skillCard:hover .icon-wrapper img,
+.skillCard:hover .icon-wrapper svg {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(76%) saturate(2806%) hue-rotate(238deg) brightness(100%) contrast(101%);
+    transform: rotate(5deg);
 }
 
 .column {

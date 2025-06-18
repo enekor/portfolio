@@ -33,6 +33,8 @@
         rgba(30, 30, 31, 0.95),
         rgba(30, 30, 31, 0.8)
     );
+    position: relative;
+    z-index: 2;
 }
 
 .projectName {
@@ -43,6 +45,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: block;
 }
 
 .projectInfoText {
@@ -50,46 +53,114 @@
     margin-bottom: 15px;
     line-height: 1.5;
     opacity: 0.9;
+    font-size: 1rem;
 }
 
 .icons {
     display: flex;
     gap: 15px;
     align-items: center;
+    margin-top: 15px;
 }
 
 .svg {
-    height: 30px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
     transition: all 0.3s ease;
-    opacity: 0.8;
+    opacity: 0.9;
+    filter: brightness(0) saturate(100%) invert(100%);
+    cursor: pointer;
 }
 
 .svg:hover {
     filter: brightness(0) saturate(100%) invert(41%) sepia(54%) saturate(3106%) hue-rotate(236deg) brightness(103%) contrast(101%);
-    cursor: pointer;
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.1);
     opacity: 1;
 }
 
-/* Animación de brillo al hover */
-.project::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(155, 98, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
+/* Enhanced hover effects */
+.project.hover-effect {
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.project:hover::after {
-    left: 100%;
+.project.hover-effect:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(155, 98, 255, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project.hover-effect:hover .pImage {
+  transform: scale(1.1);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.project.hover-effect:hover .projectName {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+/* Pulse effect for icons */
+.icons .svg {
+  transition: all 0.3s ease;
+}
+
+.icons .svg:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 10px var(--accent-color));
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1.2) rotate(5deg); }
+  50% { transform: scale(1.3) rotate(-5deg); }
+  100% { transform: scale(1.2) rotate(5deg); }
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .project {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .projectInfo {
+        padding: 15px;
+    }
+    
+    .projectName {
+        font-size: 1.3em;
+    }
+    
+    .projectInfoText {
+        font-size: 0.9em;
+    }
+    
+    .icons {
+        gap: 12px;
+    }
+    
+    .svg {
+        height: 28px;
+        width: 28px;
+    }
+}
+
+/* Force visibility on all project elements */
+.projectName,
+.projectInfoText,
+.icons {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.icons {
+    display: flex !important;
 }
 

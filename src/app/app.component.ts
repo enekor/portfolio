@@ -1,18 +1,18 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeadComponent } from './widgets/head/head.component';
 import { BodyCardComponent } from './widgets/body-card/body-card.component';
+import { ParticlesBackgroundComponent } from './shared/particles-background/particles-background.component';
 import { PageService } from './services/page.service';
 import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeadComponent, BodyCardComponent],
+  imports: [CommonModule, RouterOutlet, HeadComponent, BodyCardComponent, ParticlesBackgroundComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   constructor(private pageService: PageService) {}

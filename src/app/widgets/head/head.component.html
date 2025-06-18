@@ -3,7 +3,10 @@
     <div class="image-container">
       <img src="assets/eneko.jpeg" alt="Foto de eneko" class="profileImage hover-effect" />
     </div>
-    <h1 class="bold animate-text">ENEKO REBOLLO HERNANDEZ</h1>
+    <h1 class="bold">
+      <span class="typewriter" [innerHTML]="displayText"></span>
+      <span class="cursor">|</span>
+    </h1>
   </div>
 
   
@@ -40,16 +43,21 @@
       </li>
     </ul>
   </nav>
-
   <div class="social-links" data-aos="fade-up" data-aos-delay="800">
-    <button class="icon-button" (click)="openLink('https://github.com/enekor')"><!--por favor deja de cambiarmelo, el que pones es otro-->
-      <img alt="Github" class="svg" src="assets/icons/github/github.svg" />
-    </button>
-    <button class="icon-button" (click)="openLink('https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/')">
-      <img alt="LinkedIn" class="svg" src="assets/icons/linkedin/linkedin.svg" />
-    </button>
-    <button class="icon-button" (click)="openLink('mailto:enekorebollo@gmail.com')">
-      <img alt="Email" class="svg" src="assets/icons/mail/mail.svg" />
-    </button>
+    <app-tooltip text="Ver mi GitHub" position="top">
+      <button class="icon-button" (click)="openLink('https://github.com/enekor')">
+        <img alt="Github" class="svg" src="assets/icons/github/github.svg" />
+      </button>
+    </app-tooltip>
+    <app-tooltip text="Conectar en LinkedIn" position="top">
+      <button class="icon-button" (click)="openLink('https://www.linkedin.com/in/eneko-rebollo-hern%C3%A1ndez-411122143/')">
+        <img alt="LinkedIn" class="svg" src="assets/icons/linkedin/linkedin.svg" />
+      </button>
+    </app-tooltip>
+    <app-tooltip text="Enviar email" position="top">
+      <button class="icon-button" (click)="openLink('mailto:enekorebollo@gmail.com')">
+        <img alt="Email" class="svg" src="assets/icons/mail/mail.svg" />
+      </button>
+    </app-tooltip>
   </div>
 </div>
