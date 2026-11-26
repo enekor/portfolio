@@ -1,5 +1,294 @@
-<main class="main">
-  <app-head></app-head>
-  <app-body-card></app-body-card>
+<div class="backdrop" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="grid-lines"></div>
+</div>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="nav" [class.nav--scrolled]="scrolled() || menuOpen()">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="#inicio" (click)="go('inicio', $event)">
+      <span class="nav__logo">ER</span>
+      <span class="nav__name">{{ profile.shortName }}</span>
+    </a>
+
+    <nav class="nav__links" [class.nav__links--open]="menuOpen()" aria-label="Secciones">
+      @for (item of nav; track item.id) {
+        <a [href]="'#' + item.id" [class.is-active]="active() === item.id" (click)="go(item.id, $event)">{{ item.label }}</a>
+      }
+    </nav>
+
+    <a class="btn btn--small btn--ghost nav__cta" [href]="profile.cv" [attr.download]="profile.cvFileName">
+      <app-icon name="download" [size]="16" /> CV
+    </a>
+    <button class="nav__toggle" type="button" (click)="menuOpen.set(!menuOpen())"
+      [attr.aria-expanded]="menuOpen()" aria-label="Abrir menú">
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero container" id="inicio">
+    <div class="hero__text">
+      <p class="eyebrow" appReveal>
+        <span class="status-dot"></span> {{ profile.role }} · {{ profile.location }}
+      </p>
+      <h1 class="hero__title" appReveal [revealDelay]="80">
+        Hola, soy <span class="gradient-text">Eneko</span>.<br />
+        Backend, visión artificial e IA que funcionan de verdad.
+      </h1>
+      <p class="hero__lead" appReveal [revealDelay]="160">{{ profile.headline }}</p>
+
+      <div class="hero__actions" appReveal [revealDelay]="240">
+        <a class="btn btn--primary" href="#proyectos" (click)="go('proyectos', $event)">
+          Ver proyectos <app-icon name="arrow-right" [size]="18" />
+        </a>
+        <a class="btn btn--ghost" href="#contacto" (click)="go('contacto', $event)">
+          <app-icon name="chat" [size]="18" /> Contactar
+        </a>
+      </div>
+
+      <div class="hero__social" appReveal [revealDelay]="320">
+        <a class="icon-btn" [href]="profile.github" target="_blank" rel="noopener" aria-label="GitHub"><app-icon name="github" /></a>
+        <a class="icon-btn" [href]="profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><app-icon name="linkedin" /></a>
+        <a class="icon-btn" [href]="'mailto:' + profile.email" aria-label="Email"><app-icon name="mail" /></a>
+      </div>
+    </div>
+
+    <div class="hero__visual" appReveal [revealDelay]="200">
+      <div class="portrait">
+        <div class="portrait__ring"></div>
+        <img [src]="profile.photo" [alt]="'Foto de ' + profile.name" width="400" height="400" />
+        <span class="float-chip float-chip--a">C# · .NET</span>
+        <span class="float-chip float-chip--b">Visión artificial</span>
+        <span class="float-chip float-chip--c">LLMs locales</span>
+        <span class="float-chip float-chip--d">Flutter ✦</span>
+      </div>
+    </div>
+
+    <ul class="stats" appReveal [revealDelay]="380">
+      @for (s of stats; track s.label) {
+        <li><strong class="gradient-text">{{ s.value }}</strong><span>{{ s.label }}</span></li>
+      }
+    </ul>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section class="section container" id="sobre-mi">
+    <header class="section__head" appReveal>
+      <span class="section__kicker">01 · Sobre mí</span>
+      <h2>Del backend al bolsillo</h2>
+    </header>
+
+    <div class="about">
+      <div class="about__text" appReveal>
+        @for (p of about; track $index) {
+          <p>{{ p }}</p>
+        }
+      </div>
+
+      <div class="skills">
+        @for (g of skills; track g.title; let i = $index) {
+          <article class="card skill" appReveal [revealDelay]="i * 80">
+            <div class="skill__head">
+              <span class="skill__icon"><app-icon [name]="g.icon" /></span>
+              <h3>{{ g.title }}</h3>
+            </div>
+            <ul class="tags">
+              @for (item of g.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCIA ============ -->
+  <section class="section container" id="experiencia">
+    <header class="section__head" appReveal>
+      <span class="section__kicker">02 · Experiencia</span>
+      <h2>Dónde he trabajado</h2>
+    </header>
+
+    <div class="experience">
+      <ol class="timeline">
+        @for (job of experience; track job.company; let i = $index) {
+          <li class="timeline__item" [class.timeline__item--current]="job.current" appReveal [revealDelay]="i * 100">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <article class="card job">
+              <div class="job__top">
+                <div>
+                  <h3>{{ job.role }}</h3>
+                  <p class="job__company">{{ job.company }}</p>
+                </div>
+                <span class="pill" [class.pill--live]="job.current">{{ job.period }}</span>
+              </div>
+              @if (job.summary) {
+                <p class="job__summary">{{ job.summary }}</p>
+              }
+              <ul class="job__tasks">
+                @for (t of job.tasks; track t) {
+                  <li>{{ t }}</li>
+                }
+              </ul>
+              <ul class="tags tags--small">
+                @for (t of job.tech; track t) {
+                  <li>{{ t }}</li>
+                }
+              </ul>
+            </article>
+          </li>
+        }
+      </ol>
+
+      <aside class="side">
+        <div class="card side__block" appReveal>
+          <h3 class="side__title"><app-icon name="cap" [size]="18" /> Formación</h3>
+          @for (e of education; track e.title) {
+            <div class="study">
+              <span class="study__period">{{ e.period }}</span>
+              <strong>{{ e.title }}</strong>
+              <span class="muted">{{ e.school }}</span>
+            </div>
+          }
+        </div>
+        <div class="card side__block" appReveal [revealDelay]="100">
+          <h3 class="side__title"><app-icon name="globe" [size]="18" /> Idiomas</h3>
+          <div class="langs">
+            @for (l of languages; track l.name) {
+              <div class="lang"><strong>{{ l.name }}</strong><span class="pill">{{ l.level }}</span></div>
+            }
+          </div>
+        </div>
+        <div class="card side__block" appReveal [revealDelay]="200">
+          <h3 class="side__title"><app-icon name="chat" [size]="18" /> Competencias blandas</h3>
+          <ul class="tags">
+            @for (s of softSkills; track s) {
+              <li>{{ s }}</li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="section container" id="proyectos">
+    <header class="section__head section__head--row" appReveal>
+      <div>
+        <span class="section__kicker">03 · Proyectos</span>
+        <h2>Cosas que he construido</h2>
+        <p class="section__sub">Proyectos personales: la mayoría nacen de algo que necesitaba yo mismo.</p>
+      </div>
+      <div class="filters" role="tablist" aria-label="Filtrar proyectos">
+        @for (f of filters; track f.id) {
+          <button type="button" role="tab" [attr.aria-selected]="filter() === f.id"
+            [class.is-active]="filter() === f.id" (click)="filter.set(f.id)">{{ f.label }}</button>
+        }
+      </div>
+    </header>
+
+    <div class="projects">
+      @for (p of projects(); track p.name) {
+        <article class="card project" [style.--hue]="p.hue">
+          <div class="project__head">
+            <div class="project__icon">
+              @if (p.image) {
+                <img [src]="p.image" [alt]="'Icono de ' + p.name" loading="lazy" width="56" height="56" />
+              } @else {
+                <span>{{ p.emoji }}</span>
+              }
+            </div>
+            <div>
+              <h3>{{ p.name }}</h3>
+              <p class="project__tagline">{{ p.tagline }}</p>
+            </div>
+          </div>
+          <p class="project__desc">{{ p.description }}</p>
+          <ul class="project__highlights">
+            @for (h of p.highlights; track h) {
+              <li>{{ h }}</li>
+            }
+          </ul>
+          <ul class="tags tags--small">
+            @for (t of p.tech; track t) {
+              <li>{{ t }}</li>
+            }
+          </ul>
+          <div class="project__links">
+            @for (l of p.links; track l.url) {
+              <a class="link-btn" [class.link-btn--accent]="l.kind === 'play'" [href]="l.url" target="_blank" rel="noopener">
+                <app-icon [name]="l.kind" [size]="16" /> {{ l.label }}
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="more" appReveal>
+      <h3 class="more__title">Y más experimentos</h3>
+      <div class="more__grid">
+        @for (m of moreProjects; track m.name) {
+          <a class="more__item" [href]="m.url" target="_blank" rel="noopener">
+            <div>
+              <strong>{{ m.name }}</strong>
+              <span class="muted">{{ m.description }}</span>
+            </div>
+            <span class="more__tech">{{ m.tech }} <app-icon name="arrow-up-right" [size]="14" /></span>
+          </a>
+        }
+      </div>
+      <a class="btn btn--ghost more__all" [href]="profile.github + '?tab=repositories'" target="_blank" rel="noopener">
+        <app-icon name="github" [size]="18" /> Ver todos los repositorios
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CV ============ -->
+  <section class="section container" id="cv">
+    <div class="cv card" appReveal>
+      <div class="cv__icon"><app-icon name="file" [size]="34" /></div>
+      <div class="cv__text">
+        <span class="section__kicker">04 · Currículum</span>
+        <h2>¿Lo prefieres en PDF?</h2>
+        <p class="muted">Mi experiencia, formación y competencias, listas para descargar.</p>
+      </div>
+      <div class="cv__actions">
+        <a class="btn btn--primary" [href]="profile.cv" [attr.download]="profile.cvFileName">
+          <app-icon name="download" [size]="18" /> Descargar CV
+        </a>
+        <a class="btn btn--ghost" [href]="profile.cv" target="_blank" rel="noopener">
+          <app-icon name="external" [size]="18" /> Abrir
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section container contact" id="contacto">
+    <div appReveal>
+      <span class="section__kicker">05 · Contacto</span>
+      <h2 class="contact__title">¿Tienes un proyecto en mente?<br /><span class="gradient-text">Hablemos.</span></h2>
+      <p class="contact__lead">Estoy abierto a nuevas oportunidades, colaboraciones o simplemente a charlar sobre desarrollo.</p>
+      <a class="contact__mail" [href]="'mailto:' + profile.email">
+        {{ profile.email }} <app-icon name="arrow-up-right" [size]="22" />
+      </a>
+      <div class="contact__links">
+        <a class="btn btn--ghost" [href]="profile.linkedin" target="_blank" rel="noopener"><app-icon name="linkedin" [size]="18" /> LinkedIn</a>
+        <a class="btn btn--ghost" [href]="profile.github" target="_blank" rel="noopener"><app-icon name="github" [size]="18" /> GitHub</a>
+      </div>
+    </div>
+  </section>
 </main>
-<router-outlet />
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© {{ year }} {{ profile.name }}</span>
+    <span class="muted">Hecho con Angular · <a href="https://github.com/enekor/portfolio" target="_blank" rel="noopener">código fuente</a></span>
+  </div>
+</footer>
