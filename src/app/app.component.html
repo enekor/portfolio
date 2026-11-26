@@ -8,7 +8,7 @@
 <header class="nav" [class.nav--scrolled]="scrolled() || menuOpen()">
   <div class="container nav__inner">
     <a class="nav__brand" href="#inicio" (click)="go('inicio', $event)">
-      <span class="nav__logo">ER</span>
+      <img class="nav__logo" [src]="profile.photo" alt="" width="36" height="36" />
       <span class="nav__name">{{ profile.shortName }}</span>
     </a>
 
@@ -36,8 +36,7 @@
         <span class="status-dot"></span> {{ profile.role }} · {{ profile.location }}
       </p>
       <h1 class="hero__title" appReveal [revealDelay]="80">
-        Hola, soy <span class="gradient-text">Eneko</span>.<br />
-        Backend, visión artificial e IA que funcionan de verdad.
+        Hola, soy <span class="gradient-text">Eneko</span>.
       </h1>
       <p class="hero__lead" appReveal [revealDelay]="160">{{ profile.headline }}</p>
 
@@ -79,7 +78,7 @@
   <section class="section container" id="sobre-mi">
     <header class="section__head" appReveal>
       <span class="section__kicker">01 · Sobre mí</span>
-      <h2>Del backend al bolsillo</h2>
+      <h2>Quién hay detrás del código</h2>
     </header>
 
     <div class="about">
@@ -181,8 +180,8 @@
     <header class="section__head section__head--row" appReveal>
       <div>
         <span class="section__kicker">03 · Proyectos</span>
-        <h2>Cosas que he construido</h2>
-        <p class="section__sub">Proyectos personales: la mayoría nacen de algo que necesitaba yo mismo.</p>
+        <h2>Proyectos personales</h2>
+        <p class="section__sub">La mayoría nacen de algo que necesitaba yo mismo.</p>
       </div>
       <div class="filters" role="tablist" aria-label="Filtrar proyectos">
         @for (f of filters; track f.id) {

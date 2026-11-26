@@ -56,7 +56,7 @@ export const PROFILE = {
   shortName: 'Eneko Rebollo',
   role: 'Ingeniero de software · Visión artificial e IA',
   headline:
-    'Backend en C#/.NET y Python con cuatro años de experiencia. Desde 2025 trabajo en videoanálisis e IA: detección de objetos, reconocimiento facial y de matrículas, IA de voz y LLMs en local.',
+    'Programador backend en C#/.NET y Python con cuatro años de experiencia. Desde 2025 trabajo en videoanálisis e IA: detección de objetos, reconocimiento facial y de matrículas, IA de voz y LLMs en local.',
   location: 'Madrid, España',
   email: 'enekorebollo@gmail.com',
   github: 'https://github.com/enekor',
@@ -67,9 +67,9 @@ export const PROFILE = {
 };
 
 export const ABOUT: string[] = [
-  'Soy técnico superior en Desarrollo de Aplicaciones Multiplataforma y llevo desde 2022 construyendo software de forma profesional. Empecé con APIs y microservicios en C# y .NET, y desde junio de 2025 trabajo en ISID como ingeniero de software de visión artificial e IA.',
-  'Allí desarrollo una plataforma de videoanálisis multicliente en .NET 6 sobre Linux y GPU: integro reconocimiento facial, despliego modelos de lenguaje en local para generar resúmenes automáticos y evalúo soluciones de IA de voz. Me gusta diseñar la arquitectura, integrar SDKs de terceros y dejarlo todo documentado y funcionando.',
-  'Fuera del trabajo hago apps móviles con Flutter y Kotlin, casi siempre con algo de IA dentro, y si necesito una herramienta que no existe, me la programo. Y sí, soy muy fan de Pokémon.',
+  'Empecé a programar en serio en el ciclo de DAM y desde 2022 no he parado. Por el camino me ha tocado migrar aplicaciones de .NET Framework, montar APIs y microservicios en C# y traducir más de una función de Python y SQL a C#. Desde junio de 2025 estoy en ISID, metido de lleno en visión artificial e IA.',
+  'Ahora mi día a día es una plataforma de videoanálisis que corre en Linux con GPUs: reconocimiento facial, matrículas, modelos de lenguaje en local que resumen lo que ocurre y alguna que otra prueba con IA de voz. Lo que más disfruto es pensar la arquitectura, pelearme con SDKs de terceros hasta que encajan y dejarlo todo documentado para que quien venga detrás no sufra.',
+  'Cuando cierro el portátil del trabajo, suelo abrir el mío. Casi todos mis proyectos nacen de algo que necesito en casa: una tablet vieja que ahora me avisa de cuándo pasa el tren, una app para apuntar lo que levanto en el gimnasio o una alternativa a Flo para mi mujer que no vende sus datos. Los hago con Flutter o Kotlin y, si puedo meterles IA, se la meto. Y sí, soy muy fan de Pokémon; algún repo lo delata.',
 ];
 
 export const STATS = [
@@ -165,15 +165,15 @@ const gh = (repo: string) => `https://github.com/enekor/${repo}`;
 export const PROJECTS: Project[] = [
   {
     name: 'Klip',
-    tagline: 'Portapapeles compartido entre Windows, Android y Linux',
+    tagline: 'Copia en un dispositivo y pega en otro',
     description:
-      'Copias en un dispositivo y pegas en otro. Funciona 100 % en la red local, sin nube, sin cuentas y sin root.',
+      'Sincroniza el portapapeles (texto, enlaces e imágenes) entre Windows, Android y Linux a través de la red local, sin nube ni cuentas.',
     highlights: [
       'Cifrado de extremo a extremo (AES-256-GCM + HMAC-SHA256)',
       'Descubrimiento automático y emparejamiento por PIN',
       'Respeta lo que los gestores de contraseñas marcan como sensible',
     ],
-    tech: ['C#', '.NET', 'Kotlin', 'Linux'],
+    tech: ['C#', '.NET', 'Kotlin', 'Windows', 'Linux'],
     categories: ['escritorio', 'movil'],
     links: [
       { label: 'Código', url: gh('klip'), kind: 'github' },
@@ -256,13 +256,13 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'FileSender',
-    tagline: 'Envía archivos entre Android y Windows por WiFi',
+    tagline: 'Archivos del PC a una tablet antigua, y al revés',
     description:
-      'Arrastra archivos en el PC y recíbelos en el móvil (o al revés) en la misma red, sin Bluetooth, cuentas ni Internet.',
+      'Para lo que no cabe en un portapapeles: envía archivos de cualquier tipo entre Windows y Android por la WiFi de casa, incluso a dispositivos con Android 7.',
     highlights: [
-      'APK de ~100 KB sin dependencias, compatible con Android 7',
-      'Instalador MSI y versión portátil para Windows',
-      'No hace falta instalar Java',
+      'Arrastrar y soltar en Windows; menú Compartir en Android',
+      'APK de ~100 KB sin dependencias',
+      'Instalador MSI o versión portátil, sin instalar Java',
     ],
     tech: ['Java', 'Android', 'Windows'],
     categories: ['movil', 'escritorio'],
